@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDM Sequence Performance Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 32px 24px; }
+  .header { text-align: center; margin-bottom: 40px; }
+  .header h1 { font-size: 2rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.5px; }
+  .header p { color: #94a3b8; margin-top: 6px; font-size: 0.95rem; }
+  .badge { display: inline-block; background: #1e3a5f; color: #60a5fa; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-top: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px 24px; }
+  .card .label { font-size: 0.78rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; margin-bottom: 8px; }
+  .card .value { font-size: 2rem; font-weight: 700; color: #f1f5f9; line-height: 1; }
+  .card .sub { font-size: 0.82rem; color: #475569; margin-top: 6px; }
+  .card.highlight { border-color: #3b82f6; background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%); }
+  .card.highlight .value { color: #60a5fa; }
+  .card.warn { border-color: #f59e0b; }
+  .card.warn .value { color: #fbbf24; }
+  .section-title { font-size: 0.85rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+  .rates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .rate-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; }
+  .rate-card .rate-label { font-size: 0.75rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .rate-card .rate-bar-wrap { background: #0f172a; border-radius: 999px; height: 6px; overflow: hidden; }
+  .rate-card .rate-bar { height: 100%; border-radius: 999px; }
+  .rate-card .rate-value { font-size: 1.1rem; font-weight: 700; color: #f1f5f9; }
+  .bar-blue { background: #3b82f6; }
+  .bar-green { background: #22c55e; }
+  .bar-yellow { background: #f59e0b; }
+  .bar-red { background: #ef4444; }
+  .footer { text-align: center; color: #334155; font-size: 0.78rem; margin-top: 24px; }
+  .updated { color: #475569; font-size: 0.8rem; text-align: center; margin-bottom: 32px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>TDM Sequence Performance</h1>
+  <p>All-time aggregate metrics across all sequences</p>
+  <span class="badge">Live Dashboard</span>
+</div>
+<div class="updated" id="updated-at">Last updated: loading...</div>
+<div class="section-title">Volume</div>
+<div class="grid">
+  <div class="card highlight"><div class="label">Total Sent</div><div class="value" id="total-sent">-</div><div class="sub">Total executions</div></div>
+  <div class="card"><div class="label">Unique Opens</div><div class="value" id="unique-opens">-</div><div class="sub">Distinct recipients</div></div>
+  <div class="card"><div class="label">Unique Clicks</div><div class="value" id="unique-clicks">-</div><div class="sub">Distinct recipients</div></div>
+  <div class="card"><div class="label">Replies</div><div class="value" id="unique-replies">-</div><div class="sub">Unique replies</div></div>
+  <div class="card"><div class="label">Meetings Booked</div><div class="value" id="bookings">-</div><div class="sub">Total bookings</div></div>
+  <div class="card warn"><div class="label">Bounces</div><div class="value" id="bounces">-</div><div class="sub">Hard + soft</div></div>
+  <div class="card"><div class="label">Out of Office</div><div class="value" id="ooo">-</div><div class="sub">Auto-replies</div></div>
+</div>
+<div class="section-title">Rates</div>
+<div class="rates-grid">
+  <div class="rate-card"><div class="rate-label">Open Rate</div><div class="rate-value" id="open-rate">-</div><div class="rate-bar-wrap"><div class="rate-bar bar-blue" id="open-bar" style="width:0%"></div></div></div>
+  <div class="rate-card"><div class="rate-label">Click Rate</div><div class="rate-value" id="click-rate">-</div><div class="rate-bar-wrap"><div class="rate-bar bar-green" id="click-bar" style="width:0%"></div></div></div>
+  <div class="rate-card"><div class="rate-label">Bounce Rate</div><div class="rate-value" id="bounce-rate">-</div><div class="rate-bar-wrap"><div class="rate-bar bar-yellow" id="bounce-bar" style="width:0%"></div></div></div>
+  <div class="rate-card"><div class="rate-label">OOO Rate</div><div class="rate-value" id="ooo-rate">-</div><div class="rate-bar-wrap"><div class="rate-bar bar-red" id="ooo-bar" style="width:0%"></div></div></div>
+</div>
+<div class="footer">TDM &bull; Powered by Mercenary Marketing AI</div>
+<script>
+async function loadData() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    const d = await res.json();
+    document.getElementById('total-sent').textContent = (d.total_executions||0).toLocaleString();
+    document.getElementById('unique-opens').textContent = (d.total_unique_opens||0).toLocaleString();
+    document.getElementById('unique-clicks').textContent = (d.total_unique_clicks||0).toLocaleString();
+    document.getElementById('unique-replies').textContent = (d.total_unique_replies||0).toLocaleString();
+    document.getElementById('bookings').textContent = (d.total_bookings||0).toLocaleString();
+    document.getElementById('bounces').textContent = (d.total_bounces||0).toLocaleString();
+    document.getElementById('ooo').textContent = (d.total_ooo||0).toLocaleString();
+    const openR = parseFloat(d.open_rate)||0, clickR = parseFloat(d.click_rate)||0;
+    const bounceR = parseFloat(d.bounce_rate)||0, oooR = parseFloat(d.ooo_rate)||0;
+    document.getElementById('open-rate').textContent = openR.toFixed(2)+'%';
+    document.getElementById('click-rate').textContent = clickR.toFixed(2)+'%';
+    document.getElementById('bounce-rate').textContent = bounceR.toFixed(2)+'%';
+    document.getElementById('ooo-rate').textContent = oooR.toFixed(2)+'%';
+    document.getElementById('open-bar').style.width = Math.min(openR*3,100)+'%';
+    document.getElementById('click-bar').style.width = Math.min(clickR*5,100)+'%';
+    document.getElementById('bounce-bar').style.width = Math.min(bounceR*5,100)+'%';
+    document.getElementById('ooo-bar').style.width = Math.min(oooR*10,100)+'%';
+    if(d.updated_at) document.getElementById('updated-at').textContent = 'Last updated: '+new Date(d.updated_at).toLocaleString();
+  } catch(e) { document.getElementById('updated-at').textContent = 'Could not load data.'; }
+}
+loadData();
+</script>
+</body>
+</html>

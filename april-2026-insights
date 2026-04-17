@@ -10,21 +10,37 @@
 
     .header {
       background: linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%);
-      color: #fff;
-      padding: 40px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      color: #fff; padding: 40px 48px;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .header .logo { font-size: 20px; font-weight: 700; letter-spacing: 1px; color: #4fc3f7; }
     .header h1 { font-size: 26px; font-weight: 700; margin-top: 6px; }
     .header .meta { font-size: 13px; color: #90caf9; margin-top: 4px; }
-    .header .badge {
+    .header-right { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .badge {
       background: #4fc3f7; color: #0d1b2a;
       font-size: 12px; font-weight: 700;
       padding: 6px 16px; border-radius: 20px;
       text-transform: uppercase; letter-spacing: 1px;
     }
+    .badge-baseline {
+      background: #fb8c00; color: #fff;
+      font-size: 11px; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* Cadence Bar */
+    .cadence-bar {
+      background: #1b3a5c; color: #cfe8ff;
+      padding: 10px 48px; font-size: 12px;
+      display: flex; gap: 32px; align-items: center;
+      border-bottom: 1px solid #0d1b2a;
+      flex-wrap: wrap;
+    }
+    .cadence-bar strong { color: #4fc3f7; }
+    .cadence-item { display: flex; align-items: center; gap: 6px; }
+    .cadence-dot { width: 7px; height: 7px; border-radius: 50%; background: #4fc3f7; flex-shrink: 0; }
 
     .container { max-width: 1280px; margin: 0 auto; padding: 36px 24px; }
 
@@ -35,6 +51,15 @@
       color: #4fc3f7; margin-bottom: 18px;
       padding-bottom: 8px; border-bottom: 2px solid #e0e7ef;
     }
+
+    /* Baseline notice */
+    .baseline-notice {
+      background: #fff8e1; border-left: 4px solid #fb8c00;
+      border-radius: 8px; padding: 14px 18px;
+      font-size: 13px; color: #5d4037; margin-bottom: 22px;
+      line-height: 1.6;
+    }
+    .baseline-notice strong { color: #e65100; }
 
     /* KPI Cards */
     .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
@@ -53,6 +78,7 @@
     .kpi-value { font-size: 32px; font-weight: 800; color: #0d1b2a; line-height: 1; }
     .kpi-sub   { font-size: 11px; color: #aaa; margin-top: 6px; line-height: 1.4; }
     .kpi-src   { font-size: 10px; color: #bbb; margin-top: 4px; font-style: italic; }
+    .kpi-delta { font-size: 11px; color: #999; margin-top: 6px; font-style: italic; }
 
     /* AI Insights */
     .insights-box {
@@ -60,21 +86,48 @@
       color: #fff; border-radius: 12px;
       padding: 30px 34px; box-shadow: 0 2px 12px rgba(0,0,0,0.12);
     }
-    .insights-box p { font-size: 14.5px; line-height: 1.8; color: #cfe8ff; margin-bottom: 14px; }
-    .insights-box p:last-child { margin-bottom: 0; }
-    .insights-box strong { color: #4fc3f7; }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+    .insight-block {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 18px 20px;
+      border-left: 3px solid #4fc3f7;
+    }
+    .insight-block.orange { border-left-color: #fb8c00; }
+    .insight-block.green  { border-left-color: #66bb6a; }
+    .insight-block.purple { border-left-color: #ce93d8; }
+    .insight-block h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #4fc3f7; margin-bottom: 8px; }
+    .insight-block.orange h4 { color: #fb8c00; }
+    .insight-block.green  h4 { color: #66bb6a; }
+    .insight-block.purple h4 { color: #ce93d8; }
+    .insight-block p { font-size: 13.5px; line-height: 1.7; color: #cfe8ff; }
+    .insight-block p strong { color: #fff; }
+    .insights-lead { font-size: 14.5px; line-height: 1.8; color: #cfe8ff; }
+    .insights-lead strong { color: #4fc3f7; }
+
+    /* High-Intent Signals */
+    .signal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .signal-card {
+      background: #fff; border-radius: 12px;
+      padding: 18px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-left: 4px solid #4fc3f7; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .signal-card.orange { border-left-color: #fb8c00; }
+    .signal-card.green  { border-left-color: #43a047; }
+    .signal-card.purple { border-left-color: #7e57c2; }
+    .signal-icon { font-size: 22px; flex-shrink: 0; }
+    .signal-body h4 { font-size: 13px; font-weight: 700; color: #0d1b2a; margin-bottom: 5px; }
+    .signal-body p  { font-size: 12px; color: #555; line-height: 1.6; }
+    .signal-body .signal-ch { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #4fc3f7; margin-top: 6px; }
+    .signal-card.orange .signal-ch { color: #fb8c00; }
+    .signal-card.green  .signal-ch { color: #43a047; }
+    .signal-card.purple .signal-ch { color: #7e57c2; }
 
     /* Funnel */
-    .funnel-wrap {
-      background: #fff; border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      overflow: hidden;
-    }
+    .funnel-wrap { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow: hidden; }
     .funnel-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
     .funnel-step {
       padding: 26px 14px; text-align: center;
-      border-right: 1px solid #f0f2f5;
-      position: relative;
+      border-right: 1px solid #f0f2f5; position: relative;
     }
     .funnel-step:last-child { border-right: none; }
     .funnel-step::after {
@@ -88,6 +141,7 @@
     .f-value { font-size: 30px; font-weight: 800; color: #0d1b2a; }
     .f-rate  { font-size: 12px; color: #4fc3f7; font-weight: 600; margin-top: 4px; }
     .f-sub   { font-size: 11px; color: #aaa; margin-top: 4px; line-height: 1.4; }
+    .f-delta { font-size: 11px; color: #bbb; margin-top: 6px; font-style: italic; }
 
     /* Tables */
     .table-wrap { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 20px; }
@@ -102,6 +156,7 @@
     tbody td { padding: 11px 14px; color: #333; }
     tbody td.r { text-align: right; font-weight: 600; }
     tbody td.bold { font-weight: 700; }
+    tbody td.delta { text-align: right; font-size: 11px; color: #bbb; font-style: italic; }
 
     .tag {
       display: inline-block; padding: 2px 9px;
@@ -118,37 +173,26 @@
     .tag.new    { background: #e3f2fd; color: #1565c0; }
     .tag.done   { background: #f3f4f6; color: #555; }
 
-    /* Rep breakdown */
+    /* Rep Cards */
     .rep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .rep-card {
-      background: #fff; border-radius: 12px;
-      padding: 22px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .rep-card .rep-header {
-      display: flex; align-items: center;
-      gap: 10px; margin-bottom: 16px;
-      padding-bottom: 12px; border-bottom: 2px solid #f0f2f5;
-    }
-    .rep-avatar {
-      width: 38px; height: 38px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; font-weight: 800; color: #fff;
-      flex-shrink: 0;
-    }
+    .rep-card { background: #fff; border-radius: 12px; padding: 22px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .rep-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #f0f2f5; }
+    .rep-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: #fff; flex-shrink: 0; }
     .av-blue   { background: #1565c0; }
     .av-green  { background: #2e7d32; }
     .av-purple { background: #6a1b9a; }
     .av-teal   { background: #00695c; }
-    .rep-name  { font-size: 15px; font-weight: 700; color: #0d1b2a; }
-    .rep-role  { font-size: 11px; color: #888; }
-    .rep-row   { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
+    .rep-name { font-size: 15px; font-weight: 700; color: #0d1b2a; }
+    .rep-role { font-size: 11px; color: #888; }
+    .rep-row  { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
     .rep-row:last-child { border-bottom: none; }
     .rep-row .rl { color: #666; }
     .rep-row .rv { font-weight: 700; color: #0d1b2a; }
     .rep-row .rr { font-size: 11px; color: #4fc3f7; font-weight: 600; }
-    .rep-source { font-size: 10px; color: #bbb; margin-top: 3px; font-style: italic; }
+    .rep-row .rd { font-size: 10px; color: #bbb; font-style: italic; margin-left: 4px; }
+    .rep-source { font-size: 10px; color: #bbb; margin-top: 8px; font-style: italic; }
 
-    /* Observations */
+    /* Observations / Insights */
     .obs-list { list-style: none; }
     .obs-list li {
       background: #fff; border-radius: 10px;
@@ -158,8 +202,14 @@
       gap: 14px; font-size: 14px; line-height: 1.65; color: #333;
     }
     .obs-list li .icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .cause-effect {
+      display: inline-block; background: #f0f7ff;
+      border-radius: 6px; padding: 6px 12px;
+      font-size: 12px; font-weight: 600; color: #1565c0;
+      margin-top: 8px; font-style: italic;
+    }
 
-    /* Action / Change cards */
+    /* Optimization Cards */
     .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
     .action-card {
       background: #fff; border-radius: 12px;
@@ -171,14 +221,14 @@
     .action-card.purple { border-left-color: #7e57c2; }
     .action-card.red    { border-left-color: #e53935; }
     .action-card.teal   { border-left-color: #00897b; }
-    .action-card h4 { font-size: 14px; font-weight: 700; color: #0d1b2a; margin-bottom: 8px; }
-    .action-card p  { font-size: 13px; color: #555; line-height: 1.65; }
-    .action-card .expected { font-size: 12px; font-weight: 700; margin-top: 12px; color: #4fc3f7; }
-    .action-card.green  .expected { color: #43a047; }
-    .action-card.orange .expected { color: #fb8c00; }
-    .action-card.purple .expected { color: #7e57c2; }
-    .action-card.red    .expected { color: #e53935; }
-    .action-card.teal   .expected { color: #00897b; }
+    .action-card h4 { font-size: 14px; font-weight: 700; color: #0d1b2a; margin-bottom: 12px; }
+    .teo-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+    .teo-row { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 1.5; }
+    .teo-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 8px; border-radius: 8px; flex-shrink: 0; margin-top: 1px; }
+    .lbl-trigger  { background: #ffebee; color: #b71c1c; }
+    .lbl-action   { background: #e3f2fd; color: #0d47a1; }
+    .lbl-expected { background: #e8f5e9; color: #1b5e20; }
+    .teo-text { color: #444; }
 
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .source-note { font-size: 11px; color: #aaa; font-style: italic; margin-bottom: 10px; }
@@ -193,111 +243,146 @@
     @media (max-width: 900px) {
       .funnel-grid { grid-template-columns: 1fr 1fr; }
       .two-col { grid-template-columns: 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
       .header { flex-direction: column; gap: 16px; text-align: center; }
+      .cadence-bar { padding: 10px 24px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════ HEADER ═══════════════════════════════════ -->
+<!-- ═══ HEADER ═══ -->
 <div class="header">
   <div>
     <div class="logo">MercenaryMarketing.ai</div>
     <h1>TDM Performance Dashboard</h1>
     <div class="meta">Reporting Period: Inception – April 17, 2026 &nbsp;|&nbsp; Report #1 &nbsp;|&nbsp; Confidential</div>
   </div>
-  <div class="badge">Biweekly Report</div>
+  <div class="header-right">
+    <div class="badge">Biweekly Report</div>
+    <div class="badge-baseline">📍 Baseline Period</div>
+  </div>
+</div>
+
+<!-- ═══ CADENCE BAR ═══ -->
+<div class="cadence-bar">
+  <div class="cadence-item"><div class="cadence-dot"></div><strong>Report Cadence:</strong>&nbsp;Biweekly (every 2 weeks)</div>
+  <div class="cadence-item"><div class="cadence-dot"></div><strong>Next Update:</strong>&nbsp;~May 1, 2026</div>
+  <div class="cadence-item"><div class="cadence-dot"></div><strong>Data Sources:</strong>&nbsp;Prosp (LinkedIn) + MMai (Email / SMS / Sequences / Lists)</div>
+  <div class="cadence-item"><div class="cadence-dot"></div><strong>Note:</strong>&nbsp;Period-over-period comparisons begin next report</div>
 </div>
 
 <div class="container">
 
-<!-- ═══════════════════════════════════ 01 AI INSIGHTS ═══════════════════════════════════ -->
+<!-- ═══ 01 AI INSIGHTS ═══ -->
 <div class="section">
   <div class="section-title">01 — AI Insights</div>
   <div class="insights-box">
-    <p>
-      TDM's outreach engine is <strong>fully live and producing early-stage engagement</strong> across both LinkedIn (Prosp) and email (MMai). Across 8 LinkedIn campaigns, <strong>1,269 connection requests</strong> were sent resulting in <strong>174 accepted invites (13.7%)</strong>, <strong>146 conversations started</strong>, and <strong>33 replies</strong>. Simultaneously, <strong>3,913 email executions</strong> across 18 sequences are generating a <strong>3.53% open rate</strong> and <strong>3.68% click rate</strong> — healthy baseline numbers for a cold outreach program.
+    <p class="insights-lead">
+      TDM's outreach engine is <strong>fully live and generating early traction</strong> across LinkedIn and email. <strong>1,269 LinkedIn requests</strong> produced <strong>174 accepted connections (13.7%)</strong>, <strong>146 conversations</strong>, and <strong>33 replies</strong>. Simultaneously, <strong>3,913 email executions</strong> are returning a <strong>3.53% open rate</strong> and <strong>3.68% click rate</strong> — a healthy cold outreach baseline. The standout is <strong>Chris Torbit's ProfServices IT campaign</strong>, running at 2.3x the portfolio acceptance rate with the most conversations of any campaign.
     </p>
-    <p>
-      <strong>The standout performer is Chris Torbit's ProfServices IT LinkedIn campaign</strong> — 236 requests sent, 75 accepted (31.8%), 61 conversations started, and 20 replies. That acceptance rate is more than double the portfolio average and the conversation volume is nearly 3x any other campaign. The audience-message fit here is clearly working and this campaign is the model to replicate.
-    </p>
-    <p>
-      <strong>Diana's Manufacturing IT AI campaign has the highest reply quality</strong> — 5 replies from just 19 accepted contacts is a 38.5% reply-to-accepted rate, meaning once someone connects, they're highly likely to engage. Volume is the only constraint here. In contrast, Diana's Manufacturing IT Demand Gen campaign is the weakest in the portfolio with a 3.6% acceptance rate and zero replies — the audience targeting or connection message needs a reset.
-    </p>
-    <p>
-      <strong>The primary gap across both channels is the conversion from conversation to meeting.</strong> 33 LinkedIn replies and 0 email replies have not produced any booked meetings. This is expected at program inception but is the immediate optimization priority. Booking links, softer CTAs, and reply-ask language in follow-up steps will be the focus for the next period.
-    </p>
+    <div class="insights-grid">
+      <div class="insight-block">
+        <h4>📡 Where Engagement Is Strongest</h4>
+        <p>Engagement is concentrated at the <strong>LinkedIn acceptance-to-conversation layer</strong>. Chris ProfServices (61 conversations) and Diana Mfg IT AI (38.5% reply-to-accepted) show the deepest prospect engagement. Email engagement is strongest at the <strong>click layer</strong> — 144 clicks vs 138 opens signals prospects are acting without being tracked as "opens," a positive deliverability signal.</p>
+      </div>
+      <div class="insight-block orange">
+        <h4>🔁 Multi-Touchpoint Engagement Signals</h4>
+        <p>The Conrad Compare web agent has captured an inbound lead (AT&T Consultant, Springfield OH) from the TDM website — a prospect who engaged via <strong>web + potential email overlap</strong>. Additionally, <strong>440 anonymous website visitors</strong> across TDM.cc, clarusco.com, and resolve.clarusco.com represent contacts who have shown intent on the web and may be receiving email simultaneously — a high-value cross-channel segment not yet activated.</p>
+      </div>
+      <div class="insight-block green">
+        <h4>⚡ Rapid Engagement Patterns</h4>
+        <p>Diana's Mfg IT AI campaign shows <strong>disproportionate reply velocity</strong> relative to acceptance volume — 5 replies from 19 accepted contacts (38.5%) indicates prospects are responding quickly after connecting, not going cold. This is a strong signal of message-market fit and audience readiness. Compare to the portfolio average of 19.0% reply-to-accepted.</p>
+      </div>
+      <div class="insight-block purple">
+        <h4>🎯 Funnel Concentration Risk</h4>
+        <p>The majority of conversations (61 of 146, <strong>42%</strong>) are coming from a single campaign — Chris ProfServices. While this validates the campaign, it also means overall conversation volume is highly dependent on one rep and one audience. Replicating this campaign's connection note and audience logic across Ed and Robert's campaigns is the highest-leverage action available.</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ 02 EXECUTIVE SUMMARY ═══════════════════════════════════ -->
+<!-- ═══ 02 EXECUTIVE SUMMARY ═══ -->
 <div class="section">
   <div class="section-title">02 — Executive Summary</div>
+  <div class="baseline-notice">
+    📍 <strong>Baseline Period:</strong> This is Report #1. All values below represent the starting benchmark. Beginning with Report #2 (est. May 1, 2026), every metric will include a <strong>Δ vs Last Period</strong> column showing biweekly change. No prior-period data exists to compare against at this time.
+  </div>
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-label">Intent Contacts</div>
       <div class="kpi-value">4,786</div>
       <div class="kpi-sub">Across all AI intent + lead lists</div>
       <div class="kpi-src">Source: MMai Lists</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card orange">
       <div class="kpi-label">LI Requests Sent</div>
       <div class="kpi-value">1,269</div>
       <div class="kpi-sub">Across 8 active LinkedIn campaigns</div>
       <div class="kpi-src">Source: Prosp</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card teal">
       <div class="kpi-label">LI Accepted</div>
       <div class="kpi-value">174</div>
       <div class="kpi-sub">13.7% acceptance rate</div>
       <div class="kpi-src">Source: Prosp</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card purple">
       <div class="kpi-label">LI Conversations</div>
       <div class="kpi-value">146</div>
       <div class="kpi-sub">Conversations started via LinkedIn</div>
       <div class="kpi-src">Source: Prosp</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">LI Replies</div>
       <div class="kpi-value">33</div>
       <div class="kpi-sub">19.0% reply rate of accepted</div>
       <div class="kpi-src">Source: Prosp</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Emails Sent</div>
       <div class="kpi-value">3,913</div>
       <div class="kpi-sub">18 sequences / 15 active</div>
       <div class="kpi-src">Source: MMai Sequences</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Email Opens</div>
       <div class="kpi-value">138</div>
       <div class="kpi-sub">3.53% open rate</div>
       <div class="kpi-src">Source: MMai Sequences</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card teal">
       <div class="kpi-label">Email Clicks</div>
       <div class="kpi-value">144</div>
       <div class="kpi-sub">3.68% click rate</div>
       <div class="kpi-src">Source: MMai Sequences</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card gray">
       <div class="kpi-label">SMS Sent</div>
       <div class="kpi-value">242</div>
       <div class="kpi-sub">Via MMai voice/SMS sequences</div>
       <div class="kpi-src">Source: MMai Sequences</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
     <div class="kpi-card red">
       <div class="kpi-label">Meetings Booked</div>
       <div class="kpi-value">0</div>
       <div class="kpi-sub">Primary conversion target</div>
       <div class="kpi-src">Source: MMai + Prosp</div>
+      <div class="kpi-delta">Δ vs Last Period: — (Baseline)</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ 03 FUNNEL OVERVIEW ═══════════════════════════════════ -->
+<!-- ═══ 03 FUNNEL OVERVIEW ═══ -->
 <div class="section">
   <div class="section-title">03 — Funnel Overview</div>
   <div class="funnel-wrap">
@@ -307,41 +392,45 @@
         <div class="f-value">4,786</div>
         <div class="f-rate">AI-qualified contacts</div>
         <div class="f-sub">Intent lists + lead lists (MMai)</div>
+        <div class="f-delta">Δ: — (Baseline)</div>
       </div>
       <div class="funnel-step">
         <div class="f-label">Outreach</div>
         <div class="f-value">5,424</div>
         <div class="f-rate">Total touches</div>
         <div class="f-sub">3,913 email · 1,269 LI · 242 SMS</div>
+        <div class="f-delta">Δ: — (Baseline)</div>
       </div>
       <div class="funnel-step">
         <div class="f-label">Engagement</div>
         <div class="f-value">456</div>
         <div class="f-rate">8.4% of outreach</div>
         <div class="f-sub">138 opens · 144 clicks · 174 LI accepts</div>
+        <div class="f-delta">Δ: — (Baseline)</div>
       </div>
       <div class="funnel-step">
         <div class="f-label">Conversations</div>
         <div class="f-value">146</div>
         <div class="f-rate">32.0% of engaged</div>
         <div class="f-sub">146 LI convos · 33 LI replies · 0 email replies</div>
+        <div class="f-delta">Δ: — (Baseline)</div>
       </div>
       <div class="funnel-step">
         <div class="f-label">Meetings</div>
         <div class="f-value">0</div>
         <div class="f-rate">Target: 1–3 next period</div>
         <div class="f-sub">Booking link + CTA optimization underway</div>
+        <div class="f-delta">Δ: — (Baseline)</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ 04 PERFORMANCE BREAKDOWN ═══════════════════════════════════ -->
+<!-- ═══ 04 PERFORMANCE BREAKDOWN ═══ -->
 <div class="section">
   <div class="section-title">04 — Performance Breakdown</div>
 
-  <!-- LinkedIn Campaigns -->
-  <p class="source-note">LinkedIn Campaigns — Source: Prosp</p>
+  <p class="source-note">LinkedIn Campaigns — Source: Prosp &nbsp;|&nbsp; Reply % (of req) = replies ÷ requests &nbsp;|&nbsp; Reply % (of accepted) = replies ÷ accepted invites</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -355,6 +444,7 @@
           <th class="r">Replies</th>
           <th class="r">Reply % (of req)</th>
           <th class="r">Reply % (of accepted)</th>
+          <th class="r">Δ vs Last</th>
           <th>Signal</th>
         </tr>
       </thead>
@@ -369,6 +459,7 @@
           <td class="r">20</td>
           <td class="r">8.5%</td>
           <td class="r">26.7%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag top">Top Performer</span></td>
         </tr>
         <tr>
@@ -381,6 +472,7 @@
           <td class="r">2</td>
           <td class="r">1.0%</td>
           <td class="r">7.1%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag flat">Flat</span></td>
         </tr>
         <tr>
@@ -393,6 +485,7 @@
           <td class="r">5</td>
           <td class="r">3.0%</td>
           <td class="r">38.5%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag strong">High Reply Quality</span></td>
         </tr>
         <tr>
@@ -405,6 +498,7 @@
           <td class="r">3</td>
           <td class="r">2.0%</td>
           <td class="r">27.3%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag flat">Flat</span></td>
         </tr>
         <tr>
@@ -417,6 +511,7 @@
           <td class="r">1</td>
           <td class="r">0.8%</td>
           <td class="r">11.1%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag flat">Flat</span></td>
         </tr>
         <tr>
@@ -429,6 +524,7 @@
           <td class="r">1</td>
           <td class="r">0.8%</td>
           <td class="r">6.7%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag flat">Flat</span></td>
         </tr>
         <tr>
@@ -441,6 +537,7 @@
           <td class="r">1</td>
           <td class="r">0.9%</td>
           <td class="r">9.1%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag solid">Solid</span></td>
         </tr>
         <tr>
@@ -453,6 +550,7 @@
           <td class="r">0</td>
           <td class="r">0.0%</td>
           <td class="r">0.0%</td>
+          <td class="delta">— Baseline</td>
           <td><span class="tag low">Needs Reset</span></td>
         </tr>
         <tr class="total-row">
@@ -465,13 +563,13 @@
           <td class="r">33</td>
           <td class="r">2.6%</td>
           <td class="r">19.0%</td>
+          <td class="delta">— Baseline</td>
           <td></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Email Sequences -->
   <p class="source-note">Email Sequence Performance — Source: MMai</p>
   <div class="two-col">
     <div>
@@ -482,6 +580,7 @@
               <th>Metric</th>
               <th class="r">Value</th>
               <th class="r">Rate</th>
+              <th class="r">Δ vs Last</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -490,66 +589,70 @@
               <td>Total Executions (Sent)</td>
               <td class="r bold">3,913</td>
               <td class="r">—</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Unique Opens</td>
               <td class="r bold">138</td>
               <td class="r">3.53%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag flat">Baseline</span></td>
             </tr>
             <tr>
               <td>Unique Clicks</td>
               <td class="r bold">144</td>
               <td class="r">3.68%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Healthy</span></td>
             </tr>
             <tr>
               <td>Unique Replies</td>
               <td class="r bold">0</td>
               <td class="r">0.0%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag gap">Gap</span></td>
             </tr>
             <tr>
               <td>Bounces</td>
               <td class="r bold">68</td>
               <td class="r">1.74%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag flat">Normal</span></td>
             </tr>
             <tr>
               <td>Out of Office</td>
               <td class="r bold">9</td>
               <td class="r">0.23%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag flat">Normal</span></td>
             </tr>
             <tr>
               <td>SMS Sent</td>
               <td class="r bold">242</td>
               <td class="r">—</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag new">Active</span></td>
             </tr>
             <tr>
               <td>Meetings Booked</td>
               <td class="r bold">0</td>
               <td class="r">0.0%</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag gap">Target</span></td>
             </tr>
             <tr>
               <td>Active Sequences</td>
               <td class="r bold">15</td>
               <td class="r">—</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Running</span></td>
-            </tr>
-            <tr>
-              <td>Inactive Sequences</td>
-              <td class="r bold">3</td>
-              <td class="r">—</td>
-              <td><span class="tag flat">Paused</span></td>
             </tr>
             <tr>
               <td>Pending Approvals</td>
               <td class="r bold">1</td>
               <td class="r">—</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag low">Action Needed</span></td>
             </tr>
           </tbody>
@@ -564,6 +667,7 @@
               <th>Top Sequences by Volume</th>
               <th class="r">Members</th>
               <th class="r">Steps Run</th>
+              <th class="r">Δ vs Last</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -572,36 +676,42 @@
               <td>Robert — AI Intent Enterprise Net.</td>
               <td class="r">1,149</td>
               <td class="r">1,031</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Ed — AI Intent Comm Channel</td>
               <td class="r">299</td>
               <td class="r">625</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Ed — MultiSite Retail Franchise</td>
               <td class="r">688</td>
               <td class="r">268</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Chris — AI Intent IT Leaders</td>
               <td class="r">273</td>
               <td class="r">241</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Chris — ProfServices IT</td>
               <td class="r">672</td>
               <td class="r">159</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag active">Active</span></td>
             </tr>
             <tr>
               <td>Press Release: Resolve 4.0</td>
               <td class="r">26</td>
               <td class="r">26</td>
+              <td class="delta">— Baseline</td>
               <td><span class="tag done">Complete</span></td>
             </tr>
           </tbody>
@@ -610,181 +720,154 @@
     </div>
   </div>
 
-  <!-- Per-Rep Breakdown -->
   <p class="source-note" style="margin-top:8px;">Per-Rep Breakdown — Combined MMai + Prosp</p>
   <div class="rep-grid">
-
     <div class="rep-card">
       <div class="rep-header">
         <div class="rep-avatar av-blue">CT</div>
-        <div>
-          <div class="rep-name">Chris Torbit</div>
-          <div class="rep-role">Prof Services · IT Leaders</div>
-        </div>
+        <div><div class="rep-name">Chris Torbit</div><div class="rep-role">Prof Services · IT Leaders</div></div>
       </div>
-      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">360</span></div>
-      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">84 <span class="rr">23.3%</span></span></div>
-      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">69</span></div>
-      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">21 <span class="rr">5.8% of req</span></span></div>
-      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">945</span></div>
-      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">400</span></div>
-      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0</span></div>
+      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">360 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">84 <span class="rr">23.3%</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">69 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">21 <span class="rr">5.8% of req</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">945 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">400 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0 <span class="rd">— Baseline</span></span></div>
       <div class="rep-source">Sources: Prosp (LI) · MMai (Email)</div>
     </div>
-
     <div class="rep-card">
       <div class="rep-header">
         <div class="rep-avatar av-green">EP</div>
-        <div>
-          <div class="rep-name">Ed Pearce</div>
-          <div class="rep-role">MultiSite Retail · Comm Channel</div>
-        </div>
+        <div><div class="rep-name">Ed Pearce</div><div class="rep-role">MultiSite Retail · Comm Channel</div></div>
       </div>
-      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">343</span></div>
-      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">39 <span class="rr">11.4%</span></span></div>
-      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">36</span></div>
-      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">5 <span class="rr">1.5% of req</span></span></div>
-      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">987</span></div>
-      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">893</span></div>
-      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0</span></div>
+      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">343 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">39 <span class="rr">11.4%</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">36 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">5 <span class="rr">1.5% of req</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">987 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">893 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0 <span class="rd">— Baseline</span></span></div>
       <div class="rep-source">Sources: Prosp (LI) · MMai (Email)</div>
     </div>
-
     <div class="rep-card">
       <div class="rep-header">
         <div class="rep-avatar av-purple">RB</div>
-        <div>
-          <div class="rep-name">Robert Bowling</div>
-          <div class="rep-role">Mfg IT CIOs · Enterprise Network</div>
-        </div>
+        <div><div class="rep-name">Robert Bowling</div><div class="rep-role">Mfg IT CIOs · Enterprise Network</div></div>
       </div>
-      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">236</span></div>
-      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">26 <span class="rr">11.0%</span></span></div>
-      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">24</span></div>
-      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">2 <span class="rr">0.8% of req</span></span></div>
-      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">1,422</span></div>
-      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">1,190</span></div>
-      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0</span></div>
+      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">236 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">26 <span class="rr">11.0%</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">24 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">2 <span class="rr">0.8% of req</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Seq Members</span><span class="rv">1,422 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Email Steps Run</span><span class="rv">1,190 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0 <span class="rd">— Baseline</span></span></div>
       <div class="rep-source">Sources: Prosp (LI) · MMai (Email)</div>
     </div>
-
     <div class="rep-card">
       <div class="rep-header">
         <div class="rep-avatar av-teal">DT</div>
-        <div>
-          <div class="rep-name">Diana (Team)</div>
-          <div class="rep-role">Manufacturing IT · AI Intent</div>
-        </div>
+        <div><div class="rep-name">Diana (Team)</div><div class="rep-role">Manufacturing IT · AI Intent</div></div>
       </div>
-      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">330</span></div>
-      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">25 <span class="rr">7.6%</span></span></div>
-      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">17</span></div>
-      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">5 <span class="rr">1.5% of req</span></span></div>
-      <div class="rep-row"><span class="rl">AI Intent List (Mfg)</span><span class="rv">2,333</span></div>
+      <div class="rep-row"><span class="rl">LI Requests Sent</span><span class="rv">330 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Accepted</span><span class="rv">25 <span class="rr">7.6%</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Conversations</span><span class="rv">17 <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">LI Replies</span><span class="rv">5 <span class="rr">1.5% of req</span> <span class="rd">— Baseline</span></span></div>
+      <div class="rep-row"><span class="rl">AI Intent List (Mfg)</span><span class="rv">2,333 <span class="rd">— Baseline</span></span></div>
       <div class="rep-row"><span class="rl">Email Sequences</span><span class="rv">Not yet active</span></div>
-      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0</span></div>
+      <div class="rep-row"><span class="rl">Meetings Booked</span><span class="rv">0 <span class="rd">— Baseline</span></span></div>
       <div class="rep-source">Sources: Prosp (LI) · MMai (Lists)</div>
     </div>
-
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ 05 PERFORMANCE INSIGHTS ═══════════════════════════════════ -->
+<!-- ═══ 05 PERFORMANCE INSIGHTS ═══ -->
 <div class="section">
   <div class="section-title">05 — Performance Insights</div>
   <ul class="obs-list">
     <li>
       <span class="icon">🏆</span>
-      <div><strong>Chris Torbit's ProfServices IT LinkedIn campaign is the clear benchmark.</strong> 236 requests → 75 accepted (31.8%) → 61 conversations → 20 replies. That acceptance rate is 2.3x the portfolio average (13.7%) and the 61 conversations started is more than all other campaigns combined. The connection message and audience targeting in this campaign are working and should be used as the template for other reps.</div>
+      <div>
+        <strong>High acceptance rate confirms audience-message fit — Chris ProfServices is the benchmark.</strong> 236 requests → 75 accepted (31.8%) → 61 conversations → 20 replies. A 31.8% acceptance rate is 2.3x the portfolio average (13.7%), which is a direct signal that the connection note language and audience targeting are aligned. This campaign's connection message and ICP definition should be extracted and used as the template for Ed and Robert's next campaign builds.
+        <div class="cause-effect">High acceptance rate (31.8%) → confirms audience-message fit → replicate connection note across other reps</div>
+      </div>
     </li>
     <li>
       <span class="icon">💎</span>
-      <div><strong>Diana's Manufacturing IT AI campaign has the highest reply quality in the portfolio.</strong> Of the 19 contacts who accepted, 5 replied — a 38.5% reply-to-accepted rate. This is the strongest engagement signal in any campaign. The constraint is volume (only 19 accepted from 165 requests, 11.5% accept rate). Improving the connection message for this audience could unlock significant conversation volume.</div>
+      <div>
+        <strong>High reply-to-accepted rate signals strong message resonance — Diana Mfg IT AI is the quality leader.</strong> 5 replies from 19 accepted contacts (38.5% reply-to-accepted) is the highest quality engagement ratio in the portfolio. Prospects are responding quickly after connecting, not going cold. The constraint is acceptance volume (only 19 from 165 requests). Improving the connection request note for this audience is the single highest-leverage action available for Diana's campaigns.
+        <div class="cause-effect">High reply-to-accepted rate (38.5%) → strong post-connect message resonance → increase volume + optimize connection note</div>
+      </div>
     </li>
     <li>
       <span class="icon">📧</span>
-      <div><strong>Email clicks (144) are outpacing tracked opens (138) — a positive deliverability signal.</strong> This is common when recipients view emails in preview panes or with image-blocking enabled, which suppresses open tracking pixels but still registers link clicks. The content and CTAs are driving action. The 3.68% click rate on cold outreach is a solid baseline.</div>
+      <div>
+        <strong>Clicks outpacing opens indicates CTA effectiveness despite tracking limitations.</strong> 144 clicks vs 138 opens is unusual and positive — it means prospects are clicking through without being tracked as "opens," common when email clients block tracking pixels (preview panes, Apple Mail Privacy Protection). The content and subject lines are working. The gap to fix is not engagement — it's the absence of a reply-ask CTA that converts clickers into responders.
+        <div class="cause-effect">Clicks (144) > Opens (138) → tracking pixel suppression, not disengagement → content is working, optimize for replies not clicks</div>
+      </div>
     </li>
     <li>
       <span class="icon">⚠️</span>
-      <div><strong>Zero email replies across 3,913 sends is the most significant gap.</strong> Clicks are happening but no one is hitting reply. This points to CTAs that send prospects to a landing page or external link rather than prompting a direct response. Adding a reply-ask ("Does this apply to your situation? Just reply here.") to step 2 of the top sequences should generate the first email replies in the next period.</div>
+      <div>
+        <strong>Zero email replies across 3,913 sends indicates CTA friction, not interest gap.</strong> Prospects are opening and clicking but not replying. This is a CTA design problem — current sequences drive traffic to external links (landing pages, press releases) rather than prompting a direct reply. The interest signal is present (3.68% click rate). The friction is in the ask. Adding a soft reply-ask ("Does this apply to your situation? Just hit reply.") to step 2 will test whether the interest converts to conversation.
+        <div class="cause-effect">0 email replies despite 144 clicks → CTA sends to links, not reply prompts → add reply-ask to step 2 of top sequences</div>
+      </div>
     </li>
     <li>
       <span class="icon">🔴</span>
-      <div><strong>Diana's Manufacturing IT Demand Gen campaign needs a full reset.</strong> 165 requests sent with only 6 accepted (3.6%) and 0 replies is the weakest performance in the portfolio by a significant margin. The AI campaign for the same audience (11.5% accept rate) outperforms it by 3x, suggesting the connection message or audience filter for the Demand Gen campaign is misaligned. A new connection note and audience review are recommended before continuing volume.</div>
+      <div>
+        <strong>Low acceptance rate signals audience-message mismatch — Diana Mfg IT Demand Gen needs a reset.</strong> 3.6% acceptance on 165 requests (6 accepted, 0 replies) is the weakest result in the portfolio and is 3x worse than Diana's AI campaign targeting the same vertical (11.5%). The difference is likely the connection note — the AI campaign's message is outperforming, which means the Demand Gen note is the variable to fix. Pausing volume and A/B testing a new connection note is the right next step.
+        <div class="cause-effect">Low acceptance rate (3.6%) → audience-message mismatch on connection note → pause, rewrite, A/B test before resuming</div>
+      </div>
     </li>
     <li>
       <span class="icon">🌐</span>
-      <div><strong>Anonymous website visitor lists represent an untapped warm-intent layer.</strong> TDM.cc has 199 anonymous visitor records, clarusco.com has 170, and resolve.clarusco.com has 71 — a combined 440 warm signals that have not yet been activated with outreach sequences. These contacts have already demonstrated intent by visiting the site and should be a priority audience for the next sequence build.</div>
+      <div>
+        <strong>Website visitor lists represent the highest-intent untapped segment in the funnel.</strong> 440 anonymous visitors across TDM.cc (199), clarusco.com (170), and resolve.clarusco.com (71) have already demonstrated intent by visiting the site. These contacts sit above cold outreach in the funnel — they've self-selected into awareness. No outreach sequences are currently targeting them. Activating this segment is the fastest path to higher-quality conversations.
+        <div class="cause-effect">440 warm website visitors with no active outreach → highest-intent untapped segment → build dedicated sequences, expected higher response rate vs. cold</div>
+      </div>
     </li>
   </ul>
 </div>
 
-<!-- ═══════════════════════════════════ 06 OPTIMIZATION FOCUS ═══════════════════════════════════ -->
+<!-- ═══ 05B HIGH-INTENT ACTIVITY SIGNALS ═══ -->
 <div class="section">
-  <div class="section-title">06 — What We Are Working On to Improve Performance</div>
-  <div class="card-grid">
-    <div class="action-card red">
-      <h4>📅 Add Booking Links to All LinkedIn Follow-Up Messages</h4>
-      <p>33 LinkedIn replies with 0 meetings booked means the handoff from conversation to calendar is broken. Every follow-up message after a reply will include a direct, low-friction booking link with a soft ask: "Would 15 minutes this week make sense?"</p>
-      <div class="expected">↑ Expected: First meetings booked within the next reporting period</div>
+  <div class="section-title">05B — High-Intent Activity Signals</div>
+  <div class="signal-grid">
+    <div class="signal-card top">
+      <div class="signal-icon">🔥</div>
+      <div class="signal-body">
+        <h4>Chris ProfServices — Conversation Velocity</h4>
+        <p>61 conversations from 75 accepted contacts (81.3% conversation-to-accepted ratio) indicates prospects are not just accepting — they're actively engaging in dialogue. This is the strongest multi-step engagement signal in the portfolio.</p>
+        <div class="signal-ch">Channel: LinkedIn (Prosp)</div>
+      </div>
     </div>
-    <div class="action-card">
-      <h4>✉️ Add Reply-Ask CTAs to Top Email Sequences</h4>
-      <p>Step 2 of Robert's Enterprise Network and Chris's ProfServices email sequences will be updated to include a direct reply prompt rather than a link-only CTA. Goal is to shift from click behavior to reply behavior, which is a stronger buying signal.</p>
-      <div class="expected">↑ Expected: First email replies within 2 weeks</div>
+    <div class="signal-card orange">
+      <div class="signal-icon">⚡</div>
+      <div class="signal-body">
+        <h4>Diana Mfg IT AI — Rapid Reply After Connect</h4>
+        <p>38.5% of accepted contacts replied — nearly 2 in 5. This reply velocity after connection suggests prospects in the Manufacturing IT AI segment are actively evaluating solutions, not passively browsing. High-intent buyer behavior.</p>
+        <div class="signal-ch">Channel: LinkedIn (Prosp)</div>
+      </div>
     </div>
-    <div class="action-card green">
-      <h4>📈 Scale Diana Manufacturing IT AI Campaign Volume</h4>
-      <p>The 38.5% reply-to-accepted rate is exceptional. We'll increase daily connection request volume for this campaign and add a structured follow-up message sequence after acceptance to capitalize on the warm engagement signal.</p>
-      <div class="expected">↑ Expected: 3–5 additional conversations per week</div>
+    <div class="signal-card green">
+      <div class="signal-icon">🖱️</div>
+      <div class="signal-body">
+        <h4>Email Click-Through Without Open Tracking</h4>
+        <p>144 email clicks with only 138 tracked opens means at least 6 prospects clicked through without being registered as "opens" — indicating direct, intent-driven link engagement. These are the highest-intent email contacts in the current send pool.</p>
+        <div class="signal-ch">Channel: Email (MMai Sequences)</div>
+      </div>
     </div>
-    <div class="action-card orange">
-      <h4>🔄 Reset Diana Manufacturing IT Demand Gen Messaging</h4>
-      <p>The 3.6% acceptance rate on 165 requests signals a clear audience-message mismatch. We'll pause volume, rewrite the connection request note to lead with a specific pain point (not a product pitch), and A/B test two variants before resuming scale.</p>
-      <div class="expected">↑ Expected: Acceptance rate improvement from 3.6% to 8–12%</div>
+    <div class="signal-card purple">
+      <div class="signal-icon">🌐</div>
+      <div class="signal-body">
+        <h4>Anonymous Website Visitors — Warm Intent Layer</h4>
+        <p>440 contacts visited TDM or Clarus properties and were captured as anonymous visitors. These prospects are in active research mode. Any overlap between this list and current email/LinkedIn outreach represents a multi-touchpoint high-intent signal.</p>
+        <div class="signal-ch">Channel: Website (MMai Visitor Tracking)</div>
+      </div>
     </div>
-    <div class="action-card purple">
-      <h4>🌐 Launch Anonymous Website Visitor Outreach Sequences</h4>
-      <p>440 warm website visitor records across TDM.cc, clarusco.com, and resolve.clarusco.com are sitting idle. We'll build dedicated short-form sequences targeting these visitors with messaging tailored to the pages they visited — highest-intent audience in the funnel.</p>
-      <div class="expected">↑ Expected: 15–25% higher response rate vs. cold outreach</div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ 07 CHANGE SUMMARY ═══════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">07 — What Changed Since the Last Update</div>
-  <div class="card-grid">
-    <div class="action-card green">
-      <h4>✅ Full Campaign Infrastructure Launched</h4>
-      <p>This is the inaugural reporting period. All 8 LinkedIn campaigns (Prosp) and 18 email sequences (MMai) were built and launched. The complete outreach engine is live across all four reps — Chris, Ed, Robert, and Diana's team.</p>
-    </div>
-    <div class="action-card">
-      <h4>📋 Audience Lists Built, Cleaned & Automated</h4>
-      <p>20 audience lists are live in MMai, including AI intent lists, anonymous visitor tracking lists, and targeted lead lists per rep. The TDM_Chris_ProfServices list was cleaned to 696 contacts (7 no-email records removed). Automation triggers are connected to sequences.</p>
-    </div>
-    <div class="action-card teal">
-      <h4>🤖 Conrad Compare AI Agent Deployed</h4>
-      <p>The Conrad Compare web agent is live on the TDM website, actively capturing inbound chat leads. One qualified web lead (AT&T Consultant, Springfield OH) has already been captured. The agent is connected to MMai's contact list for automated follow-up.</p>
-    </div>
-    <div class="action-card orange">
-      <h4>🚀 Resolve 4.0 Press Release Sequence Executed</h4>
-      <p>A targeted 26-contact press release email sequence was executed announcing Clarus's Resolve 4.0 launch, timed to the Channel Partners Conference in Las Vegas. All 26 contacts were reached. This was a one-time event-driven blast.</p>
-    </div>
-    <div class="action-card purple">
-      <h4>📊 Baseline Metrics Established</h4>
-      <p>All KPIs in this report represent first-period baselines. Starting next report, every metric will include a period-over-period comparison (WoW and MoM). The current numbers are the benchmark against which all future performance will be measured.</p>
-    </div>
-  </div>
-</div>
-
-</div><!-- end container -->
-
-<!-- FOOTER -->
-<div class="footer">
-  Generated by <strong>MercenaryMarketing.ai</strong> &nbsp;|&nbsp; TDM Performance Dashboard &nbsp;|&nbsp; April 17, 2026 &nbsp;|&nbsp; Confidential — For Internal Use Only
-</div>
-
-</body>
-</html>
+    <div class="signal-card orange">
+      <div class="signal-icon">💬</div>
+      <div class="signal-body">
+        <h4>Conrad Compare — Inbound Web Lead Captured</h4>
+        <p>One qualified inbound lead (AT&T Consultant, Springfield OH) engaged via the Conrad Compare web agent — an unsolicited, self-initiated

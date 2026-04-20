@@ -30,27 +30,39 @@
       text-transform: uppercase; letter-spacing: 1px;
     }
 
-    /* Cadence Bar */
     .cadence-bar {
-      background: #1b3a5c; color: #cfe8ff;
-      padding: 10px 48px; font-size: 12px;
-      display: flex; gap: 32px; align-items: center;
-      border-bottom: 1px solid #0d1b2a;
-      flex-wrap: wrap;
-    }
-    .cadence-bar strong { color: #4fc3f7; }
-    .cadence-item { display: flex; align-items: center; gap: 6px; }
-    .cadence-dot { width: 7px; height: 7px; border-radius: 50%; background: #4fc3f7; flex-shrink: 0; }
+  background: linear-gradient(135deg, #1b3a5c 0%, #0d1b2a 100%);
+  color: #e3f2fd;
+  padding: 20px 48px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  align-items: flex-start;
+  border-bottom: 2px solid #0d1b2a;
+}
 
-    .container { max-width: 1280px; margin: 0 auto; padding: 36px 24px; }
+.cadence-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 220px;
+}
 
-    .section { margin-bottom: 44px; }
-    .section-title {
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1.5px;
-      color: #4fc3f7; margin-bottom: 18px;
-      padding-bottom: 8px; border-bottom: 2px solid #e0e7ef;
-    }
+.cadence-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4fc3f7;
+}
+
+.cadence-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
 
     /* Baseline notice */
     .baseline-notice {
@@ -264,15 +276,30 @@
   </div>
 </div>
 
-<!-- ═══ CADENCE BAR ═══ -->
 <div class="cadence-bar">
-  <div class="cadence-item"><div class="cadence-dot"></div><strong>Report Cadence:</strong>&nbsp;Biweekly (every 2 weeks)</div>
-  <div class="cadence-item"><div class="cadence-dot"></div><strong>Next Update:</strong>&nbsp;~May 1, 2026</div>
-  <div class="cadence-item"><div class="cadence-dot"></div><strong>Data Sources:</strong>&nbsp;Prosp (LinkedIn) + MMai (Email / SMS / Sequences / Lists)</div>
-  <div class="cadence-item"><div class="cadence-dot"></div><strong>Note:</strong>&nbsp;Period-over-period comparisons begin next report</div>
-</div>
 
-<div class="container">
+  <div class="cadence-item">
+    <div class="cadence-label">Report Cadence</div>
+    <div class="cadence-value">Biweekly (every 2 weeks)</div>
+  </div>
+  
+<!-- ═══CADENCE BAR ═══ -->
+  <div class="cadence-item">
+    <div class="cadence-label">Next Update</div>
+    <div class="cadence-value">~May 1, 2026</div>
+  </div>
+
+  <div class="cadence-item">
+    <div class="cadence-label">Data Sources</div>
+    <div class="cadence-value">Prosp (LinkedIn) + MMai (Email / SMS / Sequences / Lists)</div>
+  </div>
+
+  <div class="cadence-item">
+    <div class="cadence-label">Note</div>
+    <div class="cadence-value">Period-over-period comparisons begin next report</div>
+  </div>
+
+</div>
 
 <!-- ═══ 01 AI INSIGHTS ═══ -->
 <div class="section">

@@ -1,7 +1,7 @@
 {
   "client": "TDM",
   "report_number": 2,
-  "period_label": "Apr 18 – May 18, 2026",
+  "period_label": "Apr 18 \u2013 May 18, 2026",
   "period_start": "2026-04-18",
   "period_end": "2026-05-18",
   "period_days": 31,
@@ -10,7 +10,7 @@
   "dashboard_url": "http://tdm.mercenarymarketing.ai/",
   "baseline": {
     "report_number": 1,
-    "period_label": "Jan 1 – Apr 17, 2026",
+    "period_label": "Jan 1 \u2013 Apr 17, 2026",
     "period_start": "2026-01-01",
     "period_end": "2026-04-17"
   },
@@ -132,7 +132,7 @@
         "conversations": 7,
         "replies": 0,
         "reply_rate": 0.0,
-        "note": "Paused — strong copy recommended for repurpose to Robert Bowling CFO/CPO audience"
+        "note": "Paused \u2014 strong copy recommended for repurpose to Robert Bowling CFO/CPO audience"
       },
       {
         "name": "MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1",
@@ -147,7 +147,7 @@
         "replies": 4,
         "reply_rate": 4.5,
         "top_performer": true,
-        "note": "Paused — needs channel-partner-specific copy; audience confirmed correct at 24.4% accept rate"
+        "note": "Paused \u2014 needs channel-partner-specific copy; audience confirmed correct at 24.4% accept rate"
       }
     ]
   },
@@ -199,7 +199,7 @@
       "original_sequence": "MMai_TDM_Chris_ProfServices_IT_Outreach_032026_v2",
       "original_start_date": "2026-03-20",
       "original_contact_count": 253,
-      "issue": "94% were global management consulting firms — competitors, not buyers. Only 14/253 from target industries.",
+      "issue": "94% were global management consulting firms \u2014 competitors, not buyers. Only 14/253 from target industries.",
       "audit_date": "2026-05-05",
       "new_list": "CT_ITDir-LegalAcctgCREPE_Apollo_Clean_AD_v2",
       "new_contact_count": 204,
@@ -241,40 +241,36 @@
     {
       "rep": "Ed Pearce",
       "original_sequence": "MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2",
-      "original_start_date": "2026-03-20",
       "original_contact_count": 210,
-      "list_source": "Apollo",
-      "issue": "74.8% hospital systems. 19% mega-retailers. No geo filter. Company sizes 300K-2.1M employees. Zero channel partner contacts.",
+      "issue": "List misaligned with ICP. 74.8% hospital systems, 19% mega-retailers. No geo filter. Zero channel partner contacts.",
       "audit_date": "2026-05-07",
       "new_list": "EP_ChannelPartners-Carriers-Suppliers_Apollo_v1",
       "new_contact_count": 456,
       "new_sequence": "MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1",
       "new_start_date": "2026-05-07",
       "original_status": "paused",
-      "new_status": "paused",
-      "note": "Correct audience confirmed. Needs channel-partner-specific sequence copy to activate."
+      "new_status": "running",
+      "note": "Original copy repurposed for Robert/Chris buyer outreach."
     },
     {
       "rep": "Ed Pearce",
-      "original_sequence": "MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2",
-      "original_start_date": "2026-03-20",
+      "original_sequence": "MMai_TDM_Ed_AIIntent_CommChannel_Outreach_032026_v2",
       "original_contact_count": 325,
-      "list_source": "MMai AI Intent",
-      "issue": "Audience misaligned with Ed's ICP (Channel Partners). Intent list had 6.8% target industry contacts, heavy noise.",
+      "issue": "Audience (Procurement, Finance, Compliance) misaligned with Ed's ICP. Intent list had 6.8% target industry contacts.",
       "audit_date": "2026-05-07",
       "new_list": "EP_ChannelPartners-Suppliers_Intent-T1_v1_050726_AD",
       "new_contact_count": 75,
       "new_sequence": "MMai_TDM_Anna_Epearce_CFO-CPO-ComplianceBuyers_Outreach_050726_v1",
       "new_start_date": "2026-05-07",
       "original_status": "paused",
-      "new_status": "paused",
-      "note": "Strong copy — recommend repurposing for Robert Bowling CFO/CPO/Compliance buyer audience."
+      "new_status": "running",
+      "note": "Strong copy \u2014 repurpose for Robert Bowling's CFO/CPO/Compliance audience."
     }
   ],
   "insights": [
     {
       "title": "Click Rate Breakout",
-      "detail": "Click rate jumped from 2.65% to 11.67% — a 4.4x improvement driven by list quality overhaul."
+      "detail": "Click rate jumped from 2.65% to 11.67% \u2014 a 4.4x improvement driven by list quality overhaul."
     },
     {
       "title": "Full Rebuild Period",
@@ -282,19 +278,19 @@
     },
     {
       "title": "Replies Will Recover",
-      "detail": "Reply count dropped to 0 from 33. New sequences still in early steps — watch in Report #003."
+      "detail": "Reply count dropped to 0 from 33. New sequences still in early steps \u2014 watch in Report #003."
     },
     {
       "title": "Robert MfgIT-CIOs = Blueprint",
       "detail": "15.8% accept rate and 15.0% reply rate. Strongest signal in portfolio. Expand and mirror."
     },
     {
-      "title": "Ed Pearce: Right Audience, Wrong Copy",
-      "detail": "ChannelPartners hit 24.4% accept rate in 11 days. New copy is all that's needed to activate."
-    },
-    {
       "title": "23 Pending Approvals = Blocked Pipeline",
       "detail": "Queued contacts waiting on step approvals. Highest-leverage action available right now."
+    },
+    {
+      "title": "Ed Pearce: Fully Rebuilt, Early Stage",
+      "detail": "Both sequences rebuilt from scratch with correct channel partner/supplier ICP. New sequence (456 contacts) launched May 7 \u2014 too early to evaluate performance. Original copy repurposed for Robert/Chris buyer sequences."
     }
   ],
   "next_steps": [
@@ -310,18 +306,13 @@
       "detail": "24.4% accept rate confirms correct audience. Just needs channel-partner messaging."
     },
     {
-      "priority": 3,
-      "action": "Repurpose Ed's CFO-CPO-ComplianceBuyers copy to Robert Bowling",
-      "detail": "Strong copy, wrong rep. Reassign or duplicate for Robert's CFO/CPO/Compliance buyer audience."
-    },
-    {
       "priority": 4,
       "action": "Expand Robert's MfgIT-CIOs list",
       "detail": "Best-performing campaign. Expand Apollo pull or mirror criteria for other reps."
     },
     {
       "priority": 5,
-      "action": "Monitor reply rates — Report #003 gate",
+      "action": "Monitor reply rates \u2014 Report #003 gate",
       "detail": "If replies still at 0 by Report #003, review step timing and CTA language."
     },
     {

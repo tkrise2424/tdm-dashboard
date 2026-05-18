@@ -23,10 +23,18 @@ h2 span{color:var(--text)}
 .kv{font-size:24px;font-weight:700;line-height:1}
 .kd{font-size:11px;margin-top:4px;color:var(--muted)}
 .d-up{color:var(--green)}.d-dn{color:var(--red)}.d-flat{color:var(--muted)}
-.rate-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px}
+.rate-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;margin-bottom:16px}
 .rc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
 .rl{font-size:11px;color:var(--muted)}.rv{font-size:18px;font-weight:700}
 .rr{text-align:right;font-size:11px;color:var(--muted)}
+.seq-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.seq-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+.seq-table th.num{text-align:right}.seq-table td.num{text-align:right;font-size:12px;padding:8px 12px}
+.seq-table td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.seq-table tr:last-child td{border-bottom:none}
+.seq-table tr:hover td{background:rgba(255,255,255,.02)}
+.sname{font-size:12px;font-weight:600;line-height:1.4}
+.sdate{font-size:10px;color:var(--muted);margin-top:2px}
 .li-sum{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:16px}
 .lsc{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
 .lsv2{font-size:22px;font-weight:700}.lsl2{font-size:11px;color:var(--muted)}
@@ -50,7 +58,7 @@ h2 span{color:var(--text)}
 .sn{font-size:18px;font-weight:800;color:var(--accent);min-width:24px;padding-top:1px}
 .sa{font-size:13px;font-weight:600;margin-bottom:3px}.sd{font-size:12px;color:var(--muted);line-height:1.5}
 footer{text-align:center;padding:24px;color:var(--muted);font-size:11px;border-top:1px solid var(--border)}
-@media(max-width:600px){.wrap{padding:16px}header{padding:16px}}
+@media(max-width:600px){.wrap{padding:16px}header{padding:16px}.seq-table{font-size:11px}}
 </style>
 </head>
 <body>
@@ -69,7 +77,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:11px;border-t
 <div class="wrap">
 
   <section>
-    <h2>📧 <span>Email Sequences</span></h2>
+    <h2>📧 <span>Email Sequences — Overview</span></h2>
     <div class="kpi-grid">
       <div class="kpi"><div class="kl">Executions</div><div class="kv">7,197</div><div class="kd"><span class="d-up">▲ +1773</span> vs baseline</div></div>
       <div class="kpi"><div class="kl">Unique Opens</div><div class="kv">289</div><div class="kd"><span class="d-up">▲ +151</span> vs baseline</div></div>
@@ -85,6 +93,133 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:11px;border-t
       <div class="rc"><div><div class="rl">Bounce Rate</div><div class="rv">1.25%</div></div><div class="rr"><span class="d-flat">—</span><br>Baseline 1.25%</div></div>
       <div class="rc"><div><div class="rl">OOO Rate</div><div class="rv">0.15%</div></div><div class="rr"><span class="d-dn">▼ 0.02%</span><br>Baseline 0.17%</div></div>
     </div>
+  </section>
+
+  <section>
+    <h2>📋 <span>Active Sequences — Breakdown</span></h2>
+    <table class="seq-table">
+      <thead>
+        <tr>
+          <th>Sequence</th>
+          <th class="num">Members</th>
+          <th class="num">Sent</th>
+          <th class="num">Opens</th>
+          <th class="num">Clicks</th>
+          <th class="num">Replies</th>
+          <th class="num">Bounces</th>
+          <th class="num">OOO</th>
+        </tr>
+      </thead>
+      <tbody><tr class="rep-header"><td colspan="8" style="color:#4f8ef7;padding:10px 12px 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)">Robert Bowling</td></tr><tr>
+      <td><div class="sname">Intent Clean EnterpriseNetwork</div><div class="sdate">2026-05-01 · Anna</div></td>
+      <td class="num">49</td>
+      <td class="num">49</td>
+      <td class="num ">2<br><small>4.08%</small></td>
+      <td class="num ">9<br><small>18.37%</small></td>
+      <td class="num">0</td>
+      <td class="num">0<br><small>0.0%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">MgfIT CIOs</div><div class="sdate">2026-05-01 · Anna</div></td>
+      <td class="num">225</td>
+      <td class="num">281</td>
+      <td class="num ">8<br><small>2.85%</small></td>
+      <td class="num d-up">110<br><small>39.15%</small></td>
+      <td class="num">0</td>
+      <td class="num">4<br><small>1.42%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">RBowling CFO-CPO-ComplianceBuyers</div><div class="sdate">2026-05-07 · Anna</div></td>
+      <td class="num">75</td>
+      <td class="num">68</td>
+      <td class="num ">3<br><small>4.41%</small></td>
+      <td class="num d-up">20<br><small>29.41%</small></td>
+      <td class="num">0</td>
+      <td class="num">0<br><small>0.0%</small></td>
+      <td class="num">0</td>
+    </tr><tr class="rep-header"><td colspan="8" style="color:#22c55e;padding:10px 12px 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)">Chris Torbit</td></tr><tr>
+      <td><div class="sname">CTorbit TechAdvisors-Resolve</div><div class="sdate">2026-03-20 · Anna</div></td>
+      <td class="num">295</td>
+      <td class="num">394</td>
+      <td class="num ">13<br><small>3.3%</small></td>
+      <td class="num ">69<br><small>17.51%</small></td>
+      <td class="num">0</td>
+      <td class="num">2<br><small>0.51%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">AnonVisitors Reactivation 032026</div><div class="sdate">2026-03-20 · Chris</div></td>
+      <td class="num">327</td>
+      <td class="num">763</td>
+      <td class="num ">1<br><small>0.13%</small></td>
+      <td class="num d-dn">0<br><small>0.0%</small></td>
+      <td class="num">0</td>
+      <td class="num">4<br><small>0.52%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">ResolveAnonVisitors Reactivation 032026</div><div class="sdate">2026-03-20 · Chris</div></td>
+      <td class="num">82</td>
+      <td class="num">181</td>
+      <td class="num ">9<br><small>4.97%</small></td>
+      <td class="num d-dn">9<br><small>4.97%</small></td>
+      <td class="num">0</td>
+      <td class="num">3<br><small>1.66%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">CTorbit ITDir-LegalAcctgCREPE</div><div class="sdate">2026-05-05 · Anna</div></td>
+      <td class="num">166</td>
+      <td class="num">82</td>
+      <td class="num d-up">5<br><small>6.1%</small></td>
+      <td class="num d-up">25<br><small>30.49%</small></td>
+      <td class="num">0</td>
+      <td class="num">1<br><small>1.22%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">CTorbit VPDir-UcaaS-Intent</div><div class="sdate">2026-05-06 · Anna</div></td>
+      <td class="num">279</td>
+      <td class="num">79</td>
+      <td class="num ">3<br><small>3.8%</small></td>
+      <td class="num d-up">18<br><small>22.78%</small></td>
+      <td class="num">0</td>
+      <td class="num">0<br><small>0.0%</small></td>
+      <td class="num">0</td>
+    </tr><tr class="rep-header"><td colspan="8" style="color:#a855f7;padding:10px 12px 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)">Diana</td></tr><tr>
+      <td><div class="sname">ManufacturingITDecisionMakers</div><div class="sdate">2026-03-20 · Diana</div></td>
+      <td class="num">346</td>
+      <td class="num">647</td>
+      <td class="num d-up">48<br><small>7.42%</small></td>
+      <td class="num d-up">208<br><small>32.15%</small></td>
+      <td class="num">0</td>
+      <td class="num">6<br><small>0.93%</small></td>
+      <td class="num">1</td>
+    </tr><tr>
+      <td><div class="sname">ManufacturingITIntent</div><div class="sdate">2026-04-23 · Diana</div></td>
+      <td class="num">411</td>
+      <td class="num">108</td>
+      <td class="num ">4<br><small>3.7%</small></td>
+      <td class="num d-up">40<br><small>37.04%</small></td>
+      <td class="num">0</td>
+      <td class="num">0<br><small>0.0%</small></td>
+      <td class="num">0</td>
+    </tr><tr class="rep-header"><td colspan="8" style="color:#f59e0b;padding:10px 12px 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)">Ed Pearce</td></tr><tr>
+      <td><div class="sname">AnonVisitors Reactivation 032026</div><div class="sdate">2026-03-20 · Ed</div></td>
+      <td class="num">284</td>
+      <td class="num">366</td>
+      <td class="num ">9<br><small>2.46%</small></td>
+      <td class="num ">20<br><small>5.46%</small></td>
+      <td class="num">0</td>
+      <td class="num">1<br><small>0.27%</small></td>
+      <td class="num">0</td>
+    </tr><tr>
+      <td><div class="sname">EPearce ChannelPartners-Suppliers</div><div class="sdate">2026-05-07 · Anna</div></td>
+      <td class="num">440</td>
+      <td class="num">70</td>
+      <td class="num ">2<br><small>2.86%</small></td>
+      <td class="num d-up">24<br><small>34.29%</small></td>
+      <td class="num">0</td>
+      <td class="num">1<br><small>1.43%</small></td>
+      <td class="num">0</td>
+    </tr></tbody>
+    </table>
   </section>
 
   <section>

@@ -1,0 +1,333 @@
+{
+  "client": "TDM",
+  "report_number": 2,
+  "period_label": "Apr 18 – May 18, 2026",
+  "period_start": "2026-04-18",
+  "period_end": "2026-05-18",
+  "period_days": 31,
+  "period_type": "Extended 31-Day (Audit & Rebuild Period)",
+  "generated": "2026-05-18",
+  "dashboard_url": "http://tdm.mercenarymarketing.ai/",
+  "baseline": {
+    "report_number": 1,
+    "period_label": "Jan 1 – Apr 17, 2026",
+    "period_start": "2026-01-01",
+    "period_end": "2026-04-17"
+  },
+  "email_sequences": {
+    "total_executions": 7197,
+    "total_executions_delta": 1773,
+    "unique_opens": 289,
+    "unique_opens_delta": 151,
+    "unique_clicks": 840,
+    "unique_clicks_delta": 696,
+    "replies": 0,
+    "replies_delta": -33,
+    "sms_sent": 453,
+    "sms_sent_delta": 211,
+    "bounces": 90,
+    "bounces_delta": 22,
+    "ooo": 11,
+    "ooo_delta": 2,
+    "open_rate": 4.02,
+    "open_rate_baseline": 2.54,
+    "click_rate": 11.67,
+    "click_rate_baseline": 2.65,
+    "bounce_rate": 1.25,
+    "bounce_rate_baseline": 1.25,
+    "ooo_rate": 0.15,
+    "ooo_rate_baseline": 0.17,
+    "active_sequences": 14,
+    "inactive_sequences": 11,
+    "total_sequences": 25,
+    "pending_approvals": 23,
+    "baseline_active_sequences": 15,
+    "baseline_total_sequences": 18,
+    "baseline_pending_approvals": 1
+  },
+  "linkedin_prosp": {
+    "total_requests_sent": 764,
+    "total_accepted": 85,
+    "avg_accept_rate": 11.1,
+    "total_conversations": 61,
+    "total_replies": 10,
+    "reply_to_convo_rate": 16.4,
+    "campaigns": [
+      {
+        "name": "MMai_TDM_Anna_Ctorbit_VPDir-UcaaS-Intent_Outreach_050526_v1",
+        "rep": "Chris Torbit",
+        "sender": "Anna",
+        "start_date": "2026-05-05",
+        "status": "running",
+        "requests_sent": 179,
+        "accepted": 11,
+        "accept_rate": 6.1,
+        "conversations": 8,
+        "replies": 0,
+        "reply_rate": 0.0
+      },
+      {
+        "name": "MMai_TDM_Anna_Ctorbit_ITDir-LegalAcctCREPE_Outreach_050526_v3",
+        "rep": "Chris Torbit",
+        "sender": "Anna",
+        "start_date": "2026-05-05",
+        "status": "running",
+        "requests_sent": 120,
+        "accepted": 7,
+        "accept_rate": 5.8,
+        "conversations": 5,
+        "replies": 1,
+        "reply_rate": 0.8
+      },
+      {
+        "name": "MMai_TDM_Robert_AllIntent_EnterpriseNetwork_Outreach_050126_v3_clean",
+        "rep": "Robert Bowling",
+        "sender": "Robert",
+        "start_date": "2026-05-01",
+        "status": "running",
+        "requests_sent": 35,
+        "accepted": 2,
+        "accept_rate": 5.7,
+        "conversations": 2,
+        "replies": 0,
+        "reply_rate": 0.0
+      },
+      {
+        "name": "MMai_TDM_Robert_MfgIT_CIOs_Outreach_050126_v3_new_list",
+        "rep": "Robert Bowling",
+        "sender": "Robert",
+        "start_date": "2026-05-01",
+        "status": "running",
+        "requests_sent": 165,
+        "accepted": 26,
+        "accept_rate": 15.8,
+        "conversations": 20,
+        "replies": 3,
+        "reply_rate": 15.0,
+        "top_performer": true
+      },
+      {
+        "name": "MMai_TDM_Diana_Team_ManufacturingITAllIntent_Outreach_042326_v2",
+        "rep": "Diana Byler",
+        "sender": "Diana",
+        "start_date": "2026-04-23",
+        "status": "running",
+        "requests_sent": 112,
+        "accepted": 9,
+        "accept_rate": 8.0,
+        "conversations": 8,
+        "replies": 2,
+        "reply_rate": 25.0,
+        "top_performer": true
+      },
+      {
+        "name": "MMai_TDM_Anna_EPearce_CFO-CPO-ComplianceBuyers_Outreach_050726_v1",
+        "rep": "Ed Pearce",
+        "sender": "Anna",
+        "start_date": "2026-05-07",
+        "status": "paused",
+        "requests_sent": 63,
+        "accepted": 8,
+        "accept_rate": 12.7,
+        "conversations": 7,
+        "replies": 0,
+        "reply_rate": 0.0,
+        "note": "Paused — strong copy recommended for repurpose to Robert Bowling CFO/CPO audience"
+      },
+      {
+        "name": "MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1",
+        "rep": "Ed Pearce",
+        "sender": "Anna",
+        "start_date": "2026-05-07",
+        "status": "paused",
+        "requests_sent": 90,
+        "accepted": 22,
+        "accept_rate": 24.4,
+        "conversations": 11,
+        "replies": 4,
+        "reply_rate": 4.5,
+        "top_performer": true,
+        "note": "Paused — needs channel-partner-specific copy; audience confirmed correct at 24.4% accept rate"
+      }
+    ]
+  },
+  "sequence_audit": [
+    {
+      "rep": "Diana Byler",
+      "original_sequence": "MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_032026_v1",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 441,
+      "issue": "Less than 1% qualified IT DMs. Dominated by Owners, Presidents, CEOs, Engineers. 206 contacts missing LinkedIn URLs.",
+      "audit_date": "2026-04-22",
+      "new_list": "Diana_Manufacturing_IT_Intent_Anna_v3",
+      "new_contact_count": 501,
+      "new_sequence": "MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_042326_v2",
+      "new_start_date": "2026-04-22",
+      "original_status": "paused",
+      "new_status": "running"
+    },
+    {
+      "rep": "Robert Bowling",
+      "original_sequence": "MMai_TDM_Robert_MfgIT_CIOs_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 251,
+      "issue": "89.6% entry-level. Wrong industries. 56% companies under 50 employees. Only 35% had active intent signal.",
+      "audit_date": "2026-05-01",
+      "new_list": "Robert-Bowling_CXOs-MfgITProcFin_Apollo_OH-MO-KY_v2_050126_AD",
+      "new_contact_count": 225,
+      "new_sequence": "MMai_TDM_Robert_MfgIT_CIOs_Outreach_050126_Anna_v3",
+      "new_start_date": "2026-05-01",
+      "original_status": "paused",
+      "new_status": "running"
+    },
+    {
+      "rep": "Robert Bowling",
+      "original_sequence": "MMai_TDM_Robert_AllIntent_EnterpriseNetwork_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 1181,
+      "issue": "89.6% entry-level coordinators. Mismatched titles. Correct company size but wrong contacts.",
+      "audit_date": "2026-05-01",
+      "new_list": "Robert-Bowling_CXOs-EntNet-T1_Intent_OH-MO-KY_v1_050126_AD",
+      "new_contact_count": 49,
+      "new_sequence": "MMai_TDM_Robert_Intent__Clean_EnterpriseNetwork_Outreach_Anna_050126_v3",
+      "new_start_date": "2026-05-01",
+      "original_status": "paused",
+      "new_status": "running"
+    },
+    {
+      "rep": "Chris Torbit",
+      "original_sequence": "MMai_TDM_Chris_ProfServices_IT_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 253,
+      "issue": "94% were global management consulting firms — competitors, not buyers. Only 14/253 from target industries.",
+      "audit_date": "2026-05-05",
+      "new_list": "CT_ITDir-LegalAcctgCREPE_Apollo_Clean_AD_v2",
+      "new_contact_count": 204,
+      "new_sequence": "MMai_TDM_Anna_CTorbit_VPDir-UCaaS-Intent_Outreach_050526_v1",
+      "new_start_date": "2026-05-05",
+      "original_status": "paused",
+      "new_status": "running"
+    },
+    {
+      "rep": "Chris Torbit",
+      "original_sequence": "MMai_TDM_Chris_AIIntent_ITLeaders_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 831,
+      "issue": "Only 6% IT dept tagging. Broad title noise. Stacked segments returned zero results with dept filter.",
+      "audit_date": "2026-05-05",
+      "new_list": "CT_VPDir-UCaaS_Intent-T1_v2_050526_AD",
+      "new_contact_count": 280,
+      "new_sequence": "MMai_TDM_Anna_CTorbit_VPDir-UCaaS-Intent_Outreach_052026_v1",
+      "new_start_date": "2026-05-05",
+      "original_status": "paused",
+      "new_status": "running"
+    },
+    {
+      "rep": "Chris Torbit",
+      "account": "Clarusco",
+      "original_sequence": "MMai_Clarusco_Chris_ResolveAgents_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 437,
+      "issue": "Open tracking unreliable (pixel blocking). Zero replies despite solid clicks. SMS step affecting main Twilio account. Unsubscribe link was OFF.",
+      "audit_date": "2026-05-06",
+      "new_list": null,
+      "new_contact_count": null,
+      "new_sequence": "MMai_Clarusco_Anna_CTorbit_TechAdvisors-Resolve_Outreach_032026_v2",
+      "new_start_date": null,
+      "original_status": "running",
+      "new_status": "running",
+      "changes": "SMS step removed. Cadence adjusted to LinkedIn + 3 emails. Unsubscribe + email validation turned ON. Reply CTA added."
+    },
+    {
+      "rep": "Ed Pearce",
+      "original_sequence": "MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 210,
+      "list_source": "Apollo",
+      "issue": "74.8% hospital systems. 19% mega-retailers. No geo filter. Company sizes 300K-2.1M employees. Zero channel partner contacts.",
+      "audit_date": "2026-05-07",
+      "new_list": "EP_ChannelPartners-Carriers-Suppliers_Apollo_v1",
+      "new_contact_count": 456,
+      "new_sequence": "MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1",
+      "new_start_date": "2026-05-07",
+      "original_status": "paused",
+      "new_status": "paused",
+      "note": "Correct audience confirmed. Needs channel-partner-specific sequence copy to activate."
+    },
+    {
+      "rep": "Ed Pearce",
+      "original_sequence": "MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2",
+      "original_start_date": "2026-03-20",
+      "original_contact_count": 325,
+      "list_source": "MMai AI Intent",
+      "issue": "Audience misaligned with Ed's ICP (Channel Partners). Intent list had 6.8% target industry contacts, heavy noise.",
+      "audit_date": "2026-05-07",
+      "new_list": "EP_ChannelPartners-Suppliers_Intent-T1_v1_050726_AD",
+      "new_contact_count": 75,
+      "new_sequence": "MMai_TDM_Anna_Epearce_CFO-CPO-ComplianceBuyers_Outreach_050726_v1",
+      "new_start_date": "2026-05-07",
+      "original_status": "paused",
+      "new_status": "paused",
+      "note": "Strong copy — recommend repurposing for Robert Bowling CFO/CPO/Compliance buyer audience."
+    }
+  ],
+  "insights": [
+    {
+      "title": "Click Rate Breakout",
+      "detail": "Click rate jumped from 2.65% to 11.67% — a 4.4x improvement driven by list quality overhaul."
+    },
+    {
+      "title": "Full Rebuild Period",
+      "detail": "6 of 9 original sequences audited, paused, and replaced. Report #003 is where growth metrics will compound."
+    },
+    {
+      "title": "Replies Will Recover",
+      "detail": "Reply count dropped to 0 from 33. New sequences still in early steps — watch in Report #003."
+    },
+    {
+      "title": "Robert MfgIT-CIOs = Blueprint",
+      "detail": "15.8% accept rate and 15.0% reply rate. Strongest signal in portfolio. Expand and mirror."
+    },
+    {
+      "title": "Ed Pearce: Right Audience, Wrong Copy",
+      "detail": "ChannelPartners hit 24.4% accept rate in 11 days. New copy is all that's needed to activate."
+    },
+    {
+      "title": "23 Pending Approvals = Blocked Pipeline",
+      "detail": "Queued contacts waiting on step approvals. Highest-leverage action available right now."
+    }
+  ],
+  "next_steps": [
+    {
+      "priority": 1,
+      "action": "Clear 23 pending approvals in MMai dashboard",
+      "detail": "Blocking outreach for Robert, Chris, and Diana's new lists.",
+      "url": "https://app.mercenarymarketing.ai/dashboard/companies/fmfcjkiblu4w7g6h/sequences"
+    },
+    {
+      "priority": 2,
+      "action": "Write and activate Ed Pearce's ChannelPartners sequence copy",
+      "detail": "24.4% accept rate confirms correct audience. Just needs channel-partner messaging."
+    },
+    {
+      "priority": 3,
+      "action": "Repurpose Ed's CFO-CPO-ComplianceBuyers copy to Robert Bowling",
+      "detail": "Strong copy, wrong rep. Reassign or duplicate for Robert's CFO/CPO/Compliance buyer audience."
+    },
+    {
+      "priority": 4,
+      "action": "Expand Robert's MfgIT-CIOs list",
+      "detail": "Best-performing campaign. Expand Apollo pull or mirror criteria for other reps."
+    },
+    {
+      "priority": 5,
+      "action": "Monitor reply rates — Report #003 gate",
+      "detail": "If replies still at 0 by Report #003, review step timing and CTA language."
+    },
+    {
+      "priority": 6,
+      "action": "Confirm meetings tracking method",
+      "detail": "Meetings not tracked in MMai. Confirm Calendly bookings are captured for future reports."
+    }
+  ]
+}

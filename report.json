@@ -267,29 +267,18 @@
   "next_steps": [
     {
       "priority": 1,
-      "action": "Clear 23 pending approvals in MMai dashboard",
-      "detail": "Blocking outreach for Robert, Chris, and Diana's new lists.",
-      "url": "https://app.mercenarymarketing.ai/dashboard/companies/fmfcjkiblu4w7g6h/sequences"
-    },
-    {
-      "priority": 2,
-      "action": "Write and activate Ed Pearce's ChannelPartners sequence copy",
-      "detail": "24.4% accept rate confirms correct audience. Just needs channel-partner messaging."
-    },
-    {
-      "priority": 4,
       "action": "Expand Robert's MfgIT-CIOs list",
       "detail": "Best-performing campaign. Expand Apollo pull or mirror criteria for other reps."
     },
     {
-      "priority": 5,
+      "priority": 2,
       "action": "Monitor reply rates \u2014 Report #003 gate",
       "detail": "If replies still at 0 by Report #003, review step timing and CTA language."
     },
     {
-      "priority": 6,
-      "action": "Confirm meetings tracking method",
-      "detail": "Meetings not tracked in MMai. Confirm Calendly bookings are captured for future reports."
+      "priority": 3,
+      "action": "Calendly booking tracking \u2014 in progress",
+      "detail": "Calendly links are being integrated into active sequences. Booking data will be captured in future reports."
     }
   ]
 }

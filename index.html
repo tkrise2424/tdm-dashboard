@@ -1,1 +1,470 @@
-��-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TDM Report #2 — Apr 18 – May 18, 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --accent: #4f8ef7;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --gray: #6b7280;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { background: var(--card); border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 20px; font-weight: 700; }
+  header .meta { color: var(--muted); font-size: 12px; text-align: right; line-height: 1.6; }
+  .period-type { display: inline-block; background: #1e3a5f; color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-top: 4px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+  section { margin-bottom: 40px; }
+  h2 { font-size: 16px; font-weight: 600; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+  h3 { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 12px; }
+
+  /* KPI Grid */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .kpi { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .kpi-value { font-size: 26px; font-weight: 700; line-height: 1; }
+  .kpi-delta { font-size: 12px; margin-top: 4px; }
+  .green { color: var(--green); }
+  .red { color: var(--red); }
+  .gray { color: var(--gray); }
+
+  /* Badges */
+  .badge { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 4px; font-weight: 600; }
+  .badge.green { background: #14532d; color: var(--green); }
+  .badge.red { background: #450a0a; color: var(--red); }
+  .badge.gray { background: #1f2937; color: var(--gray); }
+
+  /* Rate comparison table */
+  .rate-table { width: 100%; border-collapse: collapse; }
+  .rate-table th { text-align: left; font-size: 11px; text-transform: uppercase; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .rate-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .rate-table tr:last-child td { border-bottom: none; }
+
+  /* Generic table */
+  .data-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .data-table th { text-align: left; font-size: 11px; text-transform: uppercase; color: var(--muted); padding: 10px 14px; background: #12151f; border-bottom: 1px solid var(--border); }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: #1f2233; }
+
+  .status { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .status.running { background: #14532d; color: var(--green); }
+  .status.paused { background: #451a03; color: var(--yellow); }
+  .camp-name { font-size: 12px; }
+  .note { color: var(--yellow); }
+  .issue { color: var(--red); }
+
+  /* Two-col layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Insights */
+  .insights-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; }
+  .insight-title { font-weight: 600; margin-bottom: 6px; font-size: 13px; }
+  .insight-detail { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+  /* Next steps */
+  .next-step { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 8px; }
+  .step-priority { font-size: 20px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .step-action { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+  .step-detail { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+  .alert-banner { background: #451a03; border: 1px solid var(--yellow); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; color: var(--yellow); font-size: 13px; }
+  .alert-banner strong { font-weight: 700; }
+
+  footer { text-align: center; padding: 24px; color: var(--gray); font-size: 11px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-size:11px; color:var(--muted); margin-bottom:4px;">MercenaryMarketing.ai</div>
+    <h1>TDM — Campaign Report #2</h1>
+    <div class="period-type">Extended 31-Day (Audit & Rebuild Period)</div>
+  </div>
+  <div class="meta">
+    <div><strong>Apr 18 – May 18, 2026</strong></div>
+    <div>Generated: 2026-05-18</div>
+    <div>Baseline: Jan 1 – Apr 17, 2026</div>
+    <div style="margin-top:6px;"><a href="http://tdm.mercenarymarketing.ai/" target="_blank">→ Open MMai Dashboard</a></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Alert -->
+  <div class="alert-banner">
+    ⚠️ <strong>23 pending approvals</strong> are blocking outreach for Robert, Chris, and Diana's new lists.
+    <a href="https://app.mercenarymarketing.ai/dashboard/companies/fmfcjkiblu4w7g6h/sequences" target="_blank" style="color:var(--yellow); text-decoration:underline; margin-left:8px;">Clear them now →</a>
+  </div>
+
+  <!-- EMAIL SEQUENCES -->
+  <section>
+    <h2>📧 Email Sequences</h2>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Executions</div>
+        <div class="kpi-value">7,197</div>
+        <div class="kpi-delta"><span class="badge green">+1773</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Unique Opens</div>
+        <div class="kpi-value">289</div>
+        <div class="kpi-delta"><span class="badge green">+151</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Unique Clicks</div>
+        <div class="kpi-value">840</div>
+        <div class="kpi-delta"><span class="badge green">+696</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Replies</div>
+        <div class="kpi-value">0</div>
+        <div class="kpi-delta"><span class="badge red">-33</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">SMS Sent</div>
+        <div class="kpi-value">453</div>
+        <div class="kpi-delta"><span class="badge green">+211</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Bounces</div>
+        <div class="kpi-value">90</div>
+        <div class="kpi-delta"><span class="badge red">+22</span> vs baseline</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Active Seqs</div>
+        <div class="kpi-value">14</div>
+        <div class="kpi-delta" style="color:var(--muted);">of 25 total</div>
+      </div>
+      <div class="kpi" style="border-color:var(--yellow);">
+        <div class="kpi-label" style="color:var(--yellow);">Pending Approvals</div>
+        <div class="kpi-value" style="color:var(--yellow);">23</div>
+        <div class="kpi-delta" style="color:var(--yellow);">⚠️ Action needed</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h3>Rate Comparison (This Period vs Baseline)</h3>
+      <table class="rate-table">
+        <thead><tr><th>Metric</th><th>This Period</th><th>Baseline</th><th>Change</th></tr></thead>
+        <tbody>
+          
+    <tr>
+      <td>Open Rate</td>
+      <td><strong>4.02%</strong></td>
+      <td>2.54%</td>
+      <td class="green">▲ 1.48%</td>
+    </tr>
+          
+    <tr>
+      <td>Click Rate</td>
+      <td><strong>11.67%</strong></td>
+      <td>2.65%</td>
+      <td class="green">▲ 9.02%</td>
+    </tr>
+          
+    <tr>
+      <td>Bounce Rate</td>
+      <td><strong>1.25%</strong></td>
+      <td>1.25%</td>
+      <td class="gray">— 0.0%</td>
+    </tr>
+          
+    <tr>
+      <td>OOO Rate</td>
+      <td><strong>0.15%</strong></td>
+      <td>0.17%</td>
+      <td class="red">▼ 0.02%</td>
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LINKEDIN -->
+  <section>
+    <h2>🔗 LinkedIn / Prosp</h2>
+    <div class="kpi-grid" style="margin-bottom:20px;">
+      <div class="kpi">
+        <div class="kpi-label">Requests Sent</div>
+        <div class="kpi-value">764</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Accepted</div>
+        <div class="kpi-value">85</div>
+        <div class="kpi-delta" style="color:var(--muted);">11.1% avg</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Conversations</div>
+        <div class="kpi-value">61</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Replies</div>
+        <div class="kpi-value">10</div>
+        <div class="kpi-delta" style="color:var(--muted);">16.4% of convos</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th><th>Rep</th><th>Status</th><th>Sent</th><th>Accepted</th><th>Convos</th><th>Replies</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr>
+      <td><span class="camp-name">Anna_Ctorbit_VPDir-UcaaS-Intent · 050526_v1</span></td>
+      <td>Chris Torbit</td>
+      <td><span class="status running">running</span></td>
+      <td>179</td>
+      <td>11 <small>(6.1%)</small></td>
+      <td>8</td>
+      <td>0 <small>(0.0%)</small></td>
+    </tr>
+    <tr>
+      <td><span class="camp-name">Anna_Ctorbit_ITDir-LegalAcctCREPE · 050526_v3</span></td>
+      <td>Chris Torbit</td>
+      <td><span class="status running">running</span></td>
+      <td>120</td>
+      <td>7 <small>(5.8%)</small></td>
+      <td>5</td>
+      <td>1 <small>(0.8%)</small></td>
+    </tr>
+    <tr>
+      <td><span class="camp-name">Robert_AllIntent_EnterpriseNetwork · 050126_v3_clean</span></td>
+      <td>Robert Bowling</td>
+      <td><span class="status running">running</span></td>
+      <td>35</td>
+      <td>2 <small>(5.7%)</small></td>
+      <td>2</td>
+      <td>0 <small>(0.0%)</small></td>
+    </tr>
+    <tr>
+      <td>⭐ <span class="camp-name">Robert_MfgIT_CIOs · 050126_v3_new_list</span></td>
+      <td>Robert Bowling</td>
+      <td><span class="status running">running</span></td>
+      <td>165</td>
+      <td>26 <small>(15.8%)</small></td>
+      <td>20</td>
+      <td>3 <small>(15.0%)</small></td>
+    </tr>
+    <tr>
+      <td>⭐ <span class="camp-name">Diana_Team_ManufacturingITAllIntent · 042326_v2</span></td>
+      <td>Diana Byler</td>
+      <td><span class="status running">running</span></td>
+      <td>112</td>
+      <td>9 <small>(8.0%)</small></td>
+      <td>8</td>
+      <td>2 <small>(25.0%)</small></td>
+    </tr>
+    <tr>
+      <td><span class="camp-name">Anna_EPearce_CFO-CPO-ComplianceBuyers · 050726_v1</span><br><small class="note">Paused — strong copy recommended for repurpose to Robert Bowling CFO/CPO audience</small></td>
+      <td>Ed Pearce</td>
+      <td><span class="status paused">paused</span></td>
+      <td>63</td>
+      <td>8 <small>(12.7%)</small></td>
+      <td>7</td>
+      <td>0 <small>(0.0%)</small></td>
+    </tr>
+    <tr>
+      <td>⭐ <span class="camp-name">Anna_EPearce_ChannelPartners-Suppliers · 050726_v1</span><br><small class="note">Paused — needs channel-partner-specific copy; audience confirmed correct at 24.4% accept rate</small></td>
+      <td>Ed Pearce</td>
+      <td><span class="status paused">paused</span></td>
+      <td>90</td>
+      <td>22 <small>(24.4%)</small></td>
+      <td>11</td>
+      <td>4 <small>(4.5%)</small></td>
+    </tr></tbody>
+    </table>
+  </section>
+
+  <!-- SEQUENCE AUDIT -->
+  <section>
+    <h2>🔍 Sequence Audit</h2>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rep</th><th>Original Sequence</th><th>Old #</th><th>Issue</th><th>New Sequence</th><th>New #</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>Diana Byler</td>
+      <td><small>MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_032026_v1</small></td>
+      <td>441</td>
+      <td><small class="issue">Less than 1% qualified IT DMs. Dominated by Owners, Presidents, CEOs, Engineers. 206 contacts missing LinkedIn URLs.</small></td>
+      <td><small>MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_042326_v2</small></td>
+      <td>501</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Robert Bowling</td>
+      <td><small>MMai_TDM_Robert_MfgIT_CIOs_Outreach_032026_v2</small></td>
+      <td>251</td>
+      <td><small class="issue">89.6% entry-level. Wrong industries. 56% companies under 50 employees. Only 35% had active intent signal.</small></td>
+      <td><small>MMai_TDM_Robert_MfgIT_CIOs_Outreach_050126_Anna_v3</small></td>
+      <td>225</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Robert Bowling</td>
+      <td><small>MMai_TDM_Robert_AllIntent_EnterpriseNetwork_Outreach_032026_v2</small></td>
+      <td>1181</td>
+      <td><small class="issue">89.6% entry-level coordinators. Mismatched titles. Correct company size but wrong contacts.</small></td>
+      <td><small>MMai_TDM_Robert_Intent__Clean_EnterpriseNetwork_Outreach_Anna_050126_v3</small></td>
+      <td>49</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Chris Torbit</td>
+      <td><small>MMai_TDM_Chris_ProfServices_IT_Outreach_032026_v2</small></td>
+      <td>253</td>
+      <td><small class="issue">94% were global management consulting firms — competitors, not buyers. Only 14/253 from target industries.</small></td>
+      <td><small>MMai_TDM_Anna_CTorbit_VPDir-UCaaS-Intent_Outreach_050526_v1</small></td>
+      <td>204</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Chris Torbit</td>
+      <td><small>MMai_TDM_Chris_AIIntent_ITLeaders_Outreach_032026_v2</small></td>
+      <td>831</td>
+      <td><small class="issue">Only 6% IT dept tagging. Broad title noise. Stacked segments returned zero results with dept filter.</small></td>
+      <td><small>MMai_TDM_Anna_CTorbit_VPDir-UCaaS-Intent_Outreach_052026_v1</small></td>
+      <td>280</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Chris Torbit</td>
+      <td><small>MMai_Clarusco_Chris_ResolveAgents_Outreach_032026_v2</small></td>
+      <td>437</td>
+      <td><small class="issue">Open tracking unreliable (pixel blocking). Zero replies despite solid clicks. SMS step affecting main Twilio account. Unsubscribe link was OFF.</small></td>
+      <td><small>MMai_Clarusco_Anna_CTorbit_TechAdvisors-Resolve_Outreach_032026_v2</small></td>
+      <td>None</td>
+      <td><span class="status running">running</span></td>
+    </tr>
+    <tr>
+      <td>Ed Pearce</td>
+      <td><small>MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2</small></td>
+      <td>210</td>
+      <td><small class="issue">74.8% hospital systems. 19% mega-retailers. No geo filter. Company sizes 300K-2.1M employees. Zero channel partner contacts.</small></td>
+      <td><small>MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1</small></td>
+      <td>456</td>
+      <td><span class="status paused">paused</span></td>
+    </tr>
+    <tr>
+      <td>Ed Pearce</td>
+      <td><small>MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v2</small></td>
+      <td>325</td>
+      <td><small class="issue">Audience misaligned with Ed's ICP (Channel Partners). Intent list had 6.8% target industry contacts, heavy noise.</small></td>
+      <td><small>MMai_TDM_Anna_Epearce_CFO-CPO-ComplianceBuyers_Outreach_050726_v1</small></td>
+      <td>75</td>
+      <td><span class="status paused">paused</span></td>
+    </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section>
+    <h2>💡 Key Insights</h2>
+    <div class="insights-grid">
+    <div class="insight-card">
+      <div class="insight-title">Click Rate Breakout</div>
+      <div class="insight-detail">Click rate jumped from 2.65% to 11.67% — a 4.4x improvement driven by list quality overhaul.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">Full Rebuild Period</div>
+      <div class="insight-detail">6 of 9 original sequences audited, paused, and replaced. Report #003 is where growth metrics will compound.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">Replies Will Recover</div>
+      <div class="insight-detail">Reply count dropped to 0 from 33. New sequences still in early steps — watch in Report #003.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">Robert MfgIT-CIOs = Blueprint</div>
+      <div class="insight-detail">15.8% accept rate and 15.0% reply rate. Strongest signal in portfolio. Expand and mirror.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">Ed Pearce: Right Audience, Wrong Copy</div>
+      <div class="insight-detail">ChannelPartners hit 24.4% accept rate in 11 days. New copy is all that's needed to activate.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">23 Pending Approvals = Blocked Pipeline</div>
+      <div class="insight-detail">Queued contacts waiting on step approvals. Highest-leverage action available right now.</div>
+    </div></div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section>
+    <h2>✅ Next Steps</h2>
+    
+    <div class="next-step">
+      <div class="step-priority">#1</div>
+      <div class="step-body">
+        <div class="step-action">Clear 23 pending approvals in MMai dashboard <a href="https://app.mercenarymarketing.ai/dashboard/companies/fmfcjkiblu4w7g6h/sequences" target="_blank">→ Go</a></div>
+        <div class="step-detail">Blocking outreach for Robert, Chris, and Diana's new lists.</div>
+      </div>
+    </div>
+    <div class="next-step">
+      <div class="step-priority">#2</div>
+      <div class="step-body">
+        <div class="step-action">Write and activate Ed Pearce's ChannelPartners sequence copy</div>
+        <div class="step-detail">24.4% accept rate confirms correct audience. Just needs channel-partner messaging.</div>
+      </div>
+    </div>
+    <div class="next-step">
+      <div class="step-priority">#3</div>
+      <div class="step-body">
+        <div class="step-action">Repurpose Ed's CFO-CPO-ComplianceBuyers copy to Robert Bowling</div>
+        <div class="step-detail">Strong copy, wrong rep. Reassign or duplicate for Robert's CFO/CPO/Compliance buyer audience.</div>
+      </div>
+    </div>
+    <div class="next-step">
+      <div class="step-priority">#4</div>
+      <div class="step-body">
+        <div class="step-action">Expand Robert's MfgIT-CIOs list</div>
+        <div class="step-detail">Best-performing campaign. Expand Apollo pull or mirror criteria for other reps.</div>
+      </div>
+    </div>
+    <div class="next-step">
+      <div class="step-priority">#5</div>
+      <div class="step-body">
+        <div class="step-action">Monitor reply rates — Report #003 gate</div>
+        <div class="step-detail">If replies still at 0 by Report #003, review step timing and CTA language.</div>
+      </div>
+    </div>
+    <div class="next-step">
+      <div class="step-priority">#6</div>
+      <div class="step-body">
+        <div class="step-action">Confirm meetings tracking method</div>
+        <div class="step-detail">Meetings not tracked in MMai. Confirm Calendly bookings are captured for future reports.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  TDM · Report #2 · Apr 18 – May 18, 2026 · Generated 2026-05-18 · MercenaryMarketing.ai
+</footer>
+
+</body>
+</html>

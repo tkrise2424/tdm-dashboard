@@ -40,7 +40,7 @@
     "active_sequences": 14,
     "inactive_sequences": 11,
     "total_sequences": 25,
-    "pending_approvals": 23,
+    "pending_approvals": 0,
     "baseline_active_sequences": 15,
     "baseline_total_sequences": 18,
     "baseline_pending_approvals": 1
@@ -119,35 +119,6 @@
         "replies": 2,
         "reply_rate": 25.0,
         "top_performer": true
-      },
-      {
-        "name": "MMai_TDM_Anna_EPearce_CFO-CPO-ComplianceBuyers_Outreach_050726_v1",
-        "rep": "Ed Pearce",
-        "sender": "Anna",
-        "start_date": "2026-05-07",
-        "status": "paused",
-        "requests_sent": 63,
-        "accepted": 8,
-        "accept_rate": 12.7,
-        "conversations": 7,
-        "replies": 0,
-        "reply_rate": 0.0,
-        "note": "Paused \u2014 strong copy recommended for repurpose to Robert Bowling CFO/CPO audience"
-      },
-      {
-        "name": "MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1",
-        "rep": "Ed Pearce",
-        "sender": "Anna",
-        "start_date": "2026-05-07",
-        "status": "paused",
-        "requests_sent": 90,
-        "accepted": 22,
-        "accept_rate": 24.4,
-        "conversations": 11,
-        "replies": 4,
-        "reply_rate": 4.5,
-        "top_performer": true,
-        "note": "Paused \u2014 needs channel-partner-specific copy; audience confirmed correct at 24.4% accept rate"
       }
     ]
   },

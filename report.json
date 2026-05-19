@@ -476,10 +476,6 @@
     {
       "title": "23 Pending Approvals = Blocked Pipeline",
       "detail": "Queued contacts waiting on step approvals. Highest-leverage action available right now."
-    },
-    {
-      "title": "Ed Pearce: Fully Rebuilt, Early Stage",
-      "detail": "Both sequences rebuilt from scratch with correct channel partner/supplier ICP. New sequence (456 contacts) launched May 7 \u2014 too early to evaluate performance. Original copy repurposed for Robert/Chris buyer sequences."
     }
   ],
   "next_steps": [

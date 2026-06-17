@@ -2,7 +2,7 @@
   "client": "TDM",
   "report_number": 2,
   "version": "extended",
-  "period_label": "Apr 18 – Jun 16, 2026",
+  "period_label": "Apr 18 - Jun 16, 2026",
   "period_start": "2026-04-18",
   "period_end": "2026-06-16",
   "period_days": 60,
@@ -12,16 +12,16 @@
   "dashboard_url": "http://tdm.mercenarymarketing.ai/",
   "baseline": {
     "report_number": 1,
-    "period_label": "Jan 1 – Apr 17, 2026",
+    "period_label": "Jan 1 - Apr 17, 2026",
     "period_start": "2026-01-01",
     "period_end": "2026-04-17"
   },
   "email_sequences": {
-    "section": "Email Sequences — Apr 18 – Jun 16, 2026",
+    "section": "Email Sequences - Apr 18 to Jun 16, 2026",
     "categories": [
       {
         "label": "Rebuilt Outreach Sequences (Audited & Relaunched)",
-        "description": "Sequences that replaced originals after the March-April audit. Launched late Apr – early May.",
+        "description": "Sequences that replaced originals after the March-April audit.",
         "sequences": [
           {"name":"MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_042326_v2","rep":"Diana Byler","launched":"2026-04-23","members":411,"executions":171,"opens":4,"clicks":8,"replies":0,"bounces":0,"ooo":0,"total_bookings":0,"open_rate":2.34,"click_rate":4.68,"status":"running"},
           {"name":"MMai_TDM_Robert_MfgIT_CIOs_Outreach_050126_Anna_v3","rep":"Robert Bowling","launched":"2026-05-01","members":300,"executions":542,"opens":7,"clicks":16,"replies":0,"bounces":7,"ooo":0,"total_bookings":0,"open_rate":1.29,"click_rate":2.95,"status":"paused"},
@@ -33,8 +33,8 @@
         ]
       },
       {
-        "label": "New Rep Sequences (May 21–26)",
-        "description": "First outreach sequences for Julie, Barry, and Scott — new reps added in Wave 2.",
+        "label": "New Rep Sequences (May 21-26)",
+        "description": "First outreach sequences for Julie, Barry, and Scott.",
         "sequences": [
           {"name":"MMai_TDM_Julie_RetailIT_DecisionMakers_Outreach_052126_v1","rep":"Julie","launched":"2026-05-21","members":351,"executions":77,"opens":0,"clicks":15,"replies":0,"bounces":3,"ooo":1,"total_bookings":0,"open_rate":0,"click_rate":19.48,"status":"running"},
           {"name":"MMai_TDM_Julie_RetailIT_AIIntent_Intent_052226_v1","rep":"Julie","launched":"2026-05-22","members":370,"executions":0,"opens":0,"clicks":0,"replies":0,"bounces":0,"ooo":0,"total_bookings":0,"open_rate":0,"click_rate":0,"status":"not started"},
@@ -45,8 +45,8 @@
         ]
       },
       {
-        "label": "Follow-Up Sequences (eBook — Jun 1)",
-        "description": "Post-outreach follow-up sequences sending June eBook + meeting link. Redirects warmed contacts to book.",
+        "label": "Follow-Up Sequences (eBook - Jun 1)",
+        "description": "Post-outreach follow-up sequences sending June eBook + meeting link.",
         "sequences": [
           {"name":"MMAI_TDM_BCHELIST_JUNEEBOOKANDMEETINGFOLLOWUP_ALLDATA_060126_v1","rep":"Barry Chelist","launched":"2026-06-01","members":611,"executions":194,"opens":null,"clicks":null,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"active"},
           {"name":"MMAI_TDM_SBRAKEFIELD_JUNEEBOOKANDMEETINGFOLLOWUP_ALLDATA_060126_v1","rep":"Scott Brakefield","launched":"2026-06-01","members":619,"executions":193,"opens":null,"clicks":null,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"active"},
@@ -58,15 +58,15 @@
       },
       {
         "label": "Legacy, Clarusco & Inactive",
-        "description": "Sequences from the original March launch or Clarusco-branded, now paused/inactive.",
+        "description": "Original March sequences or Clarusco-branded, paused/inactive.",
         "sequences": [
           {"name":"MMai_TDM_Diana_Team_ManufacturingITDecisionMakers_Outreach_032026_v1","rep":"Diana Byler","launched":"2026-03-20","members":344,"executions":854,"opens":48,"clicks":52,"replies":0,"bounces":7,"ooo":2,"total_bookings":0,"open_rate":5.62,"click_rate":6.09,"status":"paused/audited"},
           {"name":"MMai_TDM_Chris_AnonVisitors_Reactivation_032026_v2","rep":"Chris Torbit","launched":"2026-03-20","members":0,"executions":763,"opens":1,"clicks":0,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"paused"},
           {"name":"MMai_Clarusco_Anna_CTorbit_TechAdvisors-Resolve_Outreach_032026_v2","rep":"Chris Torbit","launched":"2026-03-20","members":0,"executions":394,"opens":13,"clicks":69,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"off-brand (Clarusco)"},
           {"name":"MMai_Clarusco_Ed_AnonVisitors_Reactivation_032026_v2","rep":"Ed Pearce","launched":"2026-03-20","members":0,"executions":366,"opens":9,"clicks":20,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"off-brand (Clarusco)"},
           {"name":"MMai_Clarusco_Chris_ResolveAnonVisitors_Reactivation_032026_v2","rep":"Chris Torbit","launched":"2026-03-20","members":0,"executions":181,"opens":9,"clicks":9,"replies":0,"bounces":null,"ooo":null,"total_bookings":0,"status":"off-brand (Clarusco)"},
-          {"name":"Press Release: Resolve 4.0 by Clarus_April 13 2026","rep":"—","launched":"2026-04-13","members":0,"executions":0,"opens":0,"clicks":0,"replies":0,"bounces":0,"ooo":0,"status":"inactive"},
-          {"name":"New Resolve Onboarding - Suppliers","rep":"—","launched":"2026-04-13","members":0,"executions":0,"opens":0,"clicks":0,"replies":0,"bounces":0,"ooo":0,"status":"inactive"}
+          {"name":"Press Release: Resolve 4.0 by Clarus_April 13 2026","rep":"-","launched":"2026-04-13","members":0,"executions":0,"opens":0,"clicks":0,"replies":0,"bounces":0,"ooo":0,"status":"inactive"},
+          {"name":"New Resolve Onboarding - Suppliers","rep":"-","launched":"2026-04-13","members":0,"executions":0,"opens":0,"clicks":0,"replies":0,"bounces":0,"ooo":0,"status":"inactive"}
         ]
       }
     ],
@@ -93,14 +93,26 @@
       "ooo_rate": 0.08,
       "ooo_rate_baseline": 0.17,
       "notes": [
-        "Aggregate opens/clicks only include sequences with step-level metrics available.",
-        "6 follow-up sequences (Jun 1) lack open/click step-level data — those metrics excluded from aggregate rates.",
-        "Legacy Clarusco sequences included for completeness but excluded from forward-looking TDM metrics."
+        "Aggregate opens/clicks only include sequences with step-level metrics.",
+        "6 follow-up sequences (Jun 1) lack open/click step data.",
+        "Legacy Clarusco sequences included for completeness."
       ]
     }
   },
   "linkedin_prosp": {
-    "period": "Cumulative (campaign launch – Jun 16, 2026)",
+    "period": "Cumulative (campaign launch to Jun 16, 2026)",
+    "campaigns": [
+      {"name":"Mmai_TDM_Anna_CTorbIt_ITDir-LegalAcctgCREPE_Outreach_05052_v3","rep":"Chris Torbit","requests_sent":198,"accepted":14,"accept_rate":7.1,"conversations":11,"replies":3,"reply_rate":1.5},
+      {"name":"Mmai_TDM_Robert_MfgIT_CIOs_Outreach_050126_v3_new_list","rep":"Robert Bowling","requests_sent":269,"accepted":58,"accept_rate":21.6,"conversations":57,"replies":6,"reply_rate":10.5},
+      {"name":"Mmai_TDM_Julie_RetailIT_DecisionMakers_Outreach_052126_v1","rep":"Julie","requests_sent":253,"accepted":50,"accept_rate":19.8,"conversations":50,"replies":1,"reply_rate":2.0},
+      {"name":"Mmai_TDM_Julie_RetailIT_Intent_052226_v1","rep":"Julie","requests_sent":223,"accepted":18,"accept_rate":8.1,"conversations":14,"replies":2,"reply_rate":14.3},
+      {"name":"Mmai_TDM_Barry_ConstructionIT_Intent_052226_v1","rep":"Barry","requests_sent":87,"accepted":5,"accept_rate":5.7,"conversations":5,"replies":0,"reply_rate":0},
+      {"name":"Mmai_TDM_Barry_ConstructionIT_DecisionMakers_Outreach_052226_v1","rep":"Barry","requests_sent":270,"accepted":13,"accept_rate":4.8,"conversations":11,"replies":0,"reply_rate":0},
+      {"name":"Mmai_TDM_Scott_MultifamilyIT_DecisionMakers_Outreach_052226_v1","rep":"Scott","requests_sent":270,"accepted":16,"accept_rate":5.9,"conversations":15,"replies":0,"reply_rate":0},
+      {"name":"Mmai_TDM_Scott_MultifamilyIT_AllIntent_052226_v1","rep":"Scott","requests_sent":30,"accepted":1,"accept_rate":3.3,"conversations":1,"replies":0,"reply_rate":0},
+      {"name":"Mmai_TDM_Diana_Team_ManufacturingITAllIntent_0042326_v2ads","rep":"Diana Byler","requests_sent":161,"accepted":12,"accept_rate":7.5,"conversations":11,"replies":2,"reply_rate":18.2},
+      {"name":"Mmai_TDM_Diana_Team_ManufacturingITDecisionMakers_Outreach_MovedTDM_061526_v1","rep":"Diana Byler","requests_sent":0,"accepted":0,"accept_rate":0,"conversations":0,"replies":0,"reply_rate":0,"note":"MIGRATED: Launched 6/16/26 - moved from MMai to new TDM LinkedIn account. No data yet."}
+    ],
     "aggregates": {
       "total_requests_sent": 1761,
       "total_accepted": 187,
@@ -110,36 +122,32 @@
       "reply_to_conversation_rate": 8.0
     },
     "migrations": [
-      {
-        "rep": "Diana Byler",
-        "sequence": "Mmai_TDM_Diana_Team_ManufacturingITDecisionMakers_Outreach_MovedTDM_061526_v1",
-        "detail": "Duplicated from MMai LinkedIn account to new TDM account on Jun 16, 2026. Campaign launched fresh; no activity yet. Original campaign (v2ads) remains active with 161 requests sent."
-      }
+      {"rep":"Diana Byler","detail":"Duplicated from MMai LinkedIn to new TDM account Jun 16, 2026. Campaign fresh; 0 activity. Original continues on MMai (161 req, 7.5% accept)."}
     ]
   },
   "sequence_audit": [
-    {"rep":"Diana Byler","original_sequence":"MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_032026_v1","status":"running","new_sequence":"MMai_TDM_Diana_Team_ManufacturingITAIIntent_Outreach_042326_v2"},
-    {"rep":"Robert Bowling","original_sequence":"MMai_TDM_Robert_MfgIT_CIOs_Outreach_032026_v2","status":"paused","new_sequence":"MMai_TDM_Robert_MfgIT_CIOs_Outreach_050126_Anna_v3"},
-    {"rep":"Robert Bowling","original_sequence":"MMai_TDM_Robert_AllIntent_EnterpriseNetwork_Outreach_032026_v2","status":"paused","new_sequence":"MMai_TDM_Robert_Intent__Clean_EnterpriseNetwork_Outreach_Anna_050126_v3"},
-    {"rep":"Chris Torbit","original_sequence":"MMai_TDM_Chris_ProfServices_IT_Outreach_032026_v1","status":"running","new_sequence":"MMai_TDM_Anna_CTorbit_VPDir-UCaaS-Intent_Outreach_050626_v1 + MMai_TDM_Anna_CTorbit_ITDir-LegalAcctgCREPE_Outreach_050526_v3"},
-    {"rep":"Chris Torbit","original_sequence":"MMai_TDM_Chris_AIIntent_ITLeaders_Outreach_032026_v1","status":"consolidated"},
-    {"rep":"Chris Torbit","original_sequence":"MMai_Clarusco_Chris_ResolveAgents_Outreach_032026_v1","status":"running (off-brand)","new_sequence":"MMai_Clarusco_Anna_CTorbit_TechAdvisors-Resolve_Outreach_032026_v2"},
-    {"rep":"Ed Pearce","original_sequence":"MMai_TDM_Ed_MultiSite_RetailFranchise_Outreach_032026_v1","status":"running","new_sequence":"MMai_TDM_Anna_EPearce_ChannelPartners-Suppliers_Outreach_050726_v1"},
-    {"rep":"Ed Pearce","original_sequence":"MMai_TDM_Ed_AIIntent_CommChannel_Outreach_032026_v1","status":"consolidated","new_sequence":"MMai_TDM_Anna_RBowling_CFO-CPO-ComplianceBuyers_Outreach_050726_v1"}
+    {"rep":"Diana Byler","status":"running","new_sequence":"Diana ManufacturingITAIIntent 042326 v2"},
+    {"rep":"Robert Bowling","status":"paused","new_sequence":"Robert MfgIT CIOs 050126 v3"},
+    {"rep":"Robert Bowling","status":"paused","new_sequence":"Robert Clean EnterpriseNetwork 050126 v3"},
+    {"rep":"Chris Torbit","status":"running","new_sequence":"VPDir-UCaaS-Intent + ITDir-LegalAcctgCREPE"},
+    {"rep":"Chris Torbit","status":"consolidated"},
+    {"rep":"Chris Torbit","status":"running (off-brand)","new_sequence":"Clarusco TechAdvisors-Resolve"},
+    {"rep":"Ed Pearce","status":"running","new_sequence":"Ed ChannelPartners-Suppliers 050726"},
+    {"rep":"Ed Pearce","status":"consolidated","new_sequence":"RBowling CFO-CPO-ComplianceBuyers"}
   ],
   "insights": [
-    {"title":"Click Rate Holding Strong","detail":"Overall click rate at 3.9%. Julie's RetailIT DecisionMakers at 19.48% and Diana's legacy at 6.09% lead. Baseline was 2.65%."},
-    {"title":"Full Rebuild Complete — 9 Reps Now Active","detail":"From 4 reps (Mar) to 9 active reps plus 6 follow-up sequences. LinkedIn at 1761 requests, 187 accepted (10.6%)."},
-    {"title":"Replies Still at Zero — Watch Report #003","detail":"Zero email replies across all sequences. LinkedIn driving 14 replies (8% reply-to-conversation rate)."},
-    {"title":"Robert's MfgIT-CIOs = Top LinkedIn Performer","detail":"21.6% LinkedIn accept rate, 57 conversations, 6 replies (10.5% reply rate). Julie's RetailIT (19.8% accept) is second."},
-    {"title":"Follow-Up Sequences = Next Big Lever","detail":"6 follow-up sequences launched Jun 1 with 2,640 total members. Already 1,163 executions. These will drive bookings."},
-    {"title":"Diana's TDM LinkedIn Migration — Fresh Start","detail":"Diana's LinkedIn campaign moved to new TDM account on Jun 16. Zero activity so far."}
+    {"title":"Click Rate Holding Strong","detail":"Overall click rate at 3.9%. Julie's RetailIT DecisionMakers at 19.48% and Diana's legacy at 6.09% lead. Baseline was 2.65%. No replies yet."},
+    {"title":"Full Rebuild Complete - 9 Reps Active","detail":"From 4 reps (Mar) to 9 reps plus 6 follow-up sequences. LinkedIn: 1,761 requests, 187 accepted (10.6%)"},
+    {"title":"Replies at Zero - Watch Report #003","detail":"Zero email replies. LinkedIn driving 14 replies (8% reply-to-conversation rate). Follow-ups should change this."},
+    {"title":"Robert's MfgIT-CIOs = Top LinkedIn","detail":"21.6% accept, 57 conversations, 6 replies. Julie's RetailIT (19.8%) second."},
+    {"title":"Follow-Up Sequences = Next Lever","detail":"6 follow-up sequences Jun 1, 2,640 members, 1,163 executions already."},
+    {"title":"Diana TDM LinkedIn Migration","detail":"Campaign moved to new TDM account Jun 16. Zero activity. Original MMai (161 req, 7.5%) continues."}
   ],
   "next_steps": [
-    {"priority":1,"action":"Monitor follow-up sequence responses","detail":"6 eBook follow-up sequences (Jun 1) are primary booking driver. Track in Report #003."},
+    {"priority":1,"action":"Monitor follow-up sequence responses","detail":"6 eBook follow-ups (Jun 1) are primary booking driver. Track in Report #003."},
     {"priority":2,"action":"Expand Robert's MfgIT-CIOs LinkedIn","detail":"21.6% accept rate. Expand Apollo or mirror for other reps."},
-    {"priority":3,"action":"Activate pending Julie, Barry, Scott sequences","detail":"4 of 6 new rep sequences show 0 executions. Review and activate."},
-    {"priority":4,"action":"Watch Diana's TDM LinkedIn migration","detail":"Fresh campaign on new TDM account. Monitor vs. original MMai campaign."},
+    {"priority":3,"action":"Activate pending Julie, Barry, Scott sequences","detail":"4 of 6 new rep sequences show 0 executions."},
+    {"priority":4,"action":"Watch Diana's TDM LinkedIn migration","detail":"Fresh campaign on new TDM account. Monitor vs original."},
     {"priority":5,"action":"Calendly booking integration","detail":"Calendly links integrated into follow-ups. Booking data for Report #003."}
   ]
 }
